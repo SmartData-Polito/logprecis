@@ -3,9 +3,9 @@ LogPrécis is a powerful tool designed to automate and enhance the workflow of s
 
 ## Features
 
-- \textbf{Automated Log Analysis}: LogPrécis utilizes advanced LMs to automatically analyze and process vast amounts of log data. It can understand and interpret log entries, allowing for effective identification of security incidents, anomalies, and patterns.
+- **Automated Log Analysis** LogPrécis utilizes advanced LMs to automatically analyze and process vast amounts of log data. It can understand and interpret log entries, allowing for the effective identification of security incidents, anomalies, and patterns.
 
-- \textbf{Precise Log Summarization}: The tool provides concise and accurate log fingerprints, extracting essential details from lengthy log entries. By condensing log information, LogPrécis enables security experts to quickly grasp the key insights and focus on critical security events.
+- **Precise Log Summarization** The tool provides concise and accurate log fingerprints, extracting essential details from lengthy log entries. By condensing log information, LogPrécis enables security experts to quickly grasp the key insights and focus on critical security events.
 
 - \textbf{Visualization and Reporting}: LogPrécis offers interactive visualizations and customizable reports to present log analysis results in a meaningful way. Visual representations help in identifying trends, outliers, and patterns, while reports aid in communicating findings and recommendations to stakeholders.
 

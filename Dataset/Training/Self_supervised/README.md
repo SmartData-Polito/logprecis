@@ -9,7 +9,7 @@ Dataset chosen as representative of **malign sessions**.
 If you find this project useful, please consider citing the following URL:
 
 - Title: HaaS
-- URL: [https://haas.nic.cz/)
+- URL: (https://haas.nic.cz/)
 
 ## NLP2Bash
 
@@ -22,7 +22,7 @@ If you use this code or find it helpful, please consider citing the following da
 - Year: 2018
 - Publisher: Proceedings of the Eleventh International Conference on Language Resources
                and Evaluation
-- URL: [https://github.com/TellinaTool/nl2bash/tree/master)
+- URL: (https://github.com/TellinaTool/nl2bash/tree/master)
 
 ## HOWTO
 

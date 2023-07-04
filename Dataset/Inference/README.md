@@ -16,3 +16,6 @@ Please consider citing the following dataset:
 - Publisher: Zenodo
 - DOI or URL: 10.5281/zenodo.3687527
 - URL: {https://doi.org/10.5281/zenodo.3687527}
+
+## Preprocessing
+The dataset is first characterized on a Vanilla non-neural way (e.g., simple info on collection period, etc). Then, is processed to make it coherent with training stats (chunked accordingly).

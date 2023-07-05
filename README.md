@@ -21,7 +21,8 @@ pip install -r requirements.txt
 ```
 ## Howto
 
-![LogPrécis flow](map.png). It also explains how you should access the code.
+![LogPrécis flow](map.png)
+It also explains how you should access the code.
 
 ## Contact
 

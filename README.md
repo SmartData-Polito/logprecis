@@ -19,6 +19,9 @@ git clone https://github.com/SmartData-Polito/logprecis.git
 ```shell
 pip install -r requirements.txt
 ```
+## Howto
+
+![LogPrécis flow](map.png). It also explains how you should access the code.
 
 ## Contact
 

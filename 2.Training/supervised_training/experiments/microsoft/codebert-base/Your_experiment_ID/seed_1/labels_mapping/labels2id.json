@@ -1,0 +1,9 @@
+{
+    "Execution": 0,
+    "Harmless": 1,
+    "Discovery": 2,
+    "Persistence": 3,
+    "Defense Evasion": 4,
+    "Impact": 5,
+    "Other": 6
+}

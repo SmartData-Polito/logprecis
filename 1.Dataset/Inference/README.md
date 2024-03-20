@@ -2,11 +2,15 @@
 
 This folder contains the data from the [CyberLab honeynet dataset](https://zenodo.org/record/3687527#.YmEr9pJBxQL).
 
+Notice that the other collection we used in the paper (Polito data) are available in the [SmartData webpage](https://mplanestore.polito.it:5001/sharing/S66xSfAiF).
+
 To group the files from the `.\Chunks` folder, run:
 
 ```shell
-cat ./Chunks/chunk* > all_files.csv
+cat ./Chunks/cyberlab_chunk* > cyberlab_data.csv
 ```
+
+The `csv` file contains 233,037 sessions, containing metadata such as `sensor` (sensor which collected the attack), `first_timestamp` (beginning of attack) and `date` (parsed date from the timestamp).
 
 **Please consider citing the following**:
 

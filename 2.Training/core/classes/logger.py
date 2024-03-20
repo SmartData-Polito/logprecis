@@ -7,19 +7,20 @@ from core.functions.utils import get_logger, create_dir, set_seeds
 from warnings import warn
 
 
-class ExperimentLogger():
-    """Basic class to keep track of the experiment logs. All following Loggers will inherit these classes.
-    """
+class ExperimentLogger:
+    """Basic class to keep track of the experiment logs. All following Loggers will inherit these classes."""
 
     def __init__(self, opts):
-        """Initializer of loggers. 
+        """Initializer of loggers.
         Loggers will both display log messages and save and the metrics.
         Args:
             opts (Dictionary): Experiment parameters. Contains important information such as the run name.
         """
         # Initializations
         self.log_dir = os.path.join(self.experiment_dir, "logs")
-        log_file = os.path.join(self.log_dir, f"experiment_logs_{opts['training_stage']}.log")
+        log_file = os.path.join(
+            self.log_dir, f"experiment_logs_{opts['training_stage']}.log"
+        )
         log_level = opts["log_level"]
         # Create log dir
         create_dir(self.log_dir)
@@ -85,7 +86,9 @@ class ExperimentLogger():
             txt (str): The text data to be logged.
             global_step (int): The global step at which the text data is logged.
         """
-        self.tensorboard_writer.add_text(tag=tag, text_string=txt, global_step=global_step)
+        self.tensorboard_writer.add_text(
+            tag=tag, text_string=txt, global_step=global_step
+        )
 
     def log_image(self, tag, img, global_step):
         """Logs an image to TensorBoard.
@@ -106,8 +109,7 @@ class ExperimentLogger():
         df.to_parquet(output_file, index=False)
 
     def end_experiment(self):
-        """Closes the TensorBoard writer, ending the experiment.
-        """
+        """Closes the TensorBoard writer, ending the experiment."""
         self.tensorboard_writer.close()
 
     def report_micro_scores(self, report, epoch, partition):
@@ -121,20 +123,35 @@ class ExperimentLogger():
             # Metrics here are hardcoded
             if class_name not in ["accuracy", "macro avg", "weighted avg"]:
                 self.tensorboard_writer.add_scalar(
-                    f'micro_precision/{partition}/{class_name}', report[class_name]["precision"], epoch)
+                    f"micro_precision/{partition}/{class_name}",
+                    report[class_name]["precision"],
+                    epoch,
+                )
                 self.tensorboard_writer.add_scalar(
-                    f'micro_recall/{partition}/{class_name}', report[class_name]["recall"], epoch)
+                    f"micro_recall/{partition}/{class_name}",
+                    report[class_name]["recall"],
+                    epoch,
+                )
                 self.tensorboard_writer.add_scalar(
-                    f'micro_fscore/{partition}/{class_name}', report[class_name]["f1-score"], epoch)
+                    f"micro_fscore/{partition}/{class_name}",
+                    report[class_name]["f1-score"],
+                    epoch,
+                )
 
 
 class TrainingExperimentLogger(ExperimentLogger):
-    """Object for generic training (can be self-supervised or supervised). With respect to the base object, it saves a configuration file (with the parameters used for training) and saves the best model once trained.
-    """
+    """Object for generic training (can be self-supervised or supervised). With respect to the base object, it saves a configuration file (with the parameters used for training) and saves the best model once trained."""
 
     def __init__(self, opts):
-        self.experiment_dir = os.path.join(opts["output_path"], opts["model_name"],
-                                           opts["run_name"], f"seed_{opts['seed']}")
+        model_name = opts["model_name"].replace("/", "_")
+        self.experiment_dir = os.path.join(
+            opts["output_path"],
+            opts["task"],
+            opts["entity"],
+            model_name,
+            opts["run_name"],
+            f"seed_{opts['seed']}",
+        )
         # Clean old results if required
         self.clean_old_results(opts["clean_start"])
         super().__init__(opts)
@@ -157,13 +174,14 @@ class TrainingExperimentLogger(ExperimentLogger):
         params = dict(self.get_params())
         del params["experiment_logger"]
         del params["tensorboard_writer"]
-        with open(os.path.join(self.experiment_dir, "training_parameters.json"), "w+") as f:
+        with open(
+            os.path.join(self.experiment_dir, "training_parameters.json"), "w+"
+        ) as f:
             json.dump(params, f, indent=4)
 
 
 class InferenceExperimentLogger(ExperimentLogger):
-    """Object for generic inference (can be self-supervised or supervised). With respect to the base object, it loads  the configuration file used for training.
-    """
+    """Object for generic inference (can be self-supervised or supervised). With respect to the base object, it loads  the configuration file used for training."""
 
     def __init__(self, opts):
         self.experiment_dir = opts["finetuned_path"]
@@ -189,15 +207,21 @@ class InferenceExperimentLogger(ExperimentLogger):
                 training_parameters = json.load(f)
         else:
             # no trained model is available at that finetuned path
-            self.experiment_dir = os.path.join(opts["output_path"], opts["model_name"],
-                                               opts["run_name"], f"seed_{opts['seed']}")
+            model_name = opts["model_name"].replace("/", "_")
+            self.experiment_dir = os.path.join(
+                opts["output_path"],
+                opts["task"],
+                opts["entity"],
+                model_name,
+                opts["run_name"],
+                f"seed_{opts['seed']}",
+            )
             training_parameters = {}
         return training_parameters
 
 
 class ClassificationTrainingLogger(TrainingExperimentLogger):
-    """Object for classification training. With respect to the base object, it export a json containing the mapping from labels to ids and viceversa (useful for testing).
-    """
+    """Object for classification training. With respect to the base object, it export a json containing the mapping from labels to ids and viceversa (useful for testing)."""
 
     def __init__(self, opts):
         super().__init__(opts)
@@ -219,8 +243,7 @@ class ClassificationTrainingLogger(TrainingExperimentLogger):
 
 
 class ClassificationInferenceLogger(InferenceExperimentLogger):
-    """Object for classification inference. With respect to the base object, it loads a json containing the mapping from labels to ids and viceversa (useful for testing). Also, it checks whether the inference requests are consistent with the trained model.
-    """
+    """Object for classification inference. With respect to the base object, it loads a json containing the mapping from labels to ids and viceversa (useful for testing). Also, it checks whether the inference requests are consistent with the trained model."""
 
     def __init__(self, opts):
         super().__init__(opts)
@@ -258,9 +281,15 @@ class ClassificationInferenceLogger(InferenceExperimentLogger):
         if len(self.training_parameters.keys()) != 0:
             training_truncation = self.training_parameters["truncation"]
             inference_truncation = opts["truncation"]
-            assert training_truncation == inference_truncation, "Error: trained model was using a corpus truncated differently"
+            assert (
+                training_truncation == inference_truncation
+            ), "Error: trained model was using a corpus truncated differently"
             training_entity = self.training_parameters["entity"]
             inference_entity = opts["entity"]
-            assert training_entity == inference_entity, "Error: model was trained using different entities"
+            assert (
+                training_entity == inference_entity
+            ), "Error: model was trained using different entities"
         else:
-            warn("\nYou are loading a model from Huggingface Hub: to obtain the best performance, make sure that the truncation policy `truncation` and classification entity `entity` on your inference data fit the ones used to finetuned the loaded model.\n")
+            self.experiment_logger.warn(
+                f"You are loading a model from Huggingface Hub: to obtain the best performance, make sure that the truncation policy `truncation` and classification entity `entity` on your inference data fit the ones used to finetuned the loaded model. Ignore this message if you are trying to classify `entity='word'` with a model tuned for token classification."
+            )

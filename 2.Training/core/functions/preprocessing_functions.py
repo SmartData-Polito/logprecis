@@ -15,12 +15,18 @@ def divide_statements(session, add_special_token, special_token="[STAT]"):
     Returns:
         list of str: A list of statements.
     """
-    statements = re.split(r'(; |\|\|? |&& )', session+" ")
+    statements = re.split(r"(; |\|\|? |&& )", session + " ")
     # concatenate with separators
-    statements = ["".join(statements[i:i+2]).strip() for i in range(0, len(statements)-1, 2)]
+    if len(statements) != 1:
+        statements = [
+            "".join(statements[i : i + 2]).strip()
+            for i in range(0, len(statements) - 1, 2)
+        ]
+    else:  # cases in which there is only 1 statement > must end with " ;"
+        statements = [statements[0].strip() + " ;"]
     if add_special_token:
         # Add separator
-        statements = [f"{special_token} "+el for el in statements]
+        statements = [f"{special_token} " + el for el in statements]
     return statements
 
 
@@ -61,8 +67,10 @@ def recreate_original_sessions(rows):
     original_session = []
     for sub_session, word_context in zip(sub_sessions, indexes_words_context):
         words = sub_session.split(" ")
-        original_session.append(" ".join([words[it] for it in range(len(words)) if it not in word_context]))
-    return pd.Series({'recreated_session': " ".join(original_session)})
+        original_session.append(
+            " ".join([words[it] for it in range(len(words)) if it not in word_context])
+        )
+    return pd.Series({"recreated_session": " ".join(original_session)})
 
 
 def assign_labels2tokens(labels, statements):
@@ -105,7 +113,12 @@ def word_truncation(session, max_length):
     Returns:
         str: The session with truncated words.
     """
-    return " ".join(map(lambda word: word[:max_length] if len(word) > max_length else word, session.split(" ")))
+    return " ".join(
+        map(
+            lambda word: word[:max_length] if len(word) > max_length else word,
+            session.split(" "),
+        )
+    )
 
 
 def expand_labels(labels):
@@ -124,7 +137,7 @@ def expand_labels(labels):
         index = int(index)
         for _ in range(index - prev_index + 1):
             statement_labels.append(label.strip())
-        prev_index = (index + 1)
+        prev_index = index + 1
     return statement_labels
 
 
@@ -135,9 +148,16 @@ def check_consistency_statement_labels(df):
         df (DataFrame): The DataFrame containing statements and their corresponding labels.
     """
     number_of_statements = df["statements_special_token"].apply(
-        lambda statements: len([el for el in " ".join(statements).split("[STAT]") if el != ""]))
-    number_of_labels = df["statement_labels"].apply(lambda statements_labels: len(statements_labels))
-    assert number_of_statements.equals(number_of_labels), "Error: not all statements are labeled!"
+        lambda statements: len(
+            [el for el in " ".join(statements).split("[STAT]") if el != ""]
+        )
+    )
+    number_of_labels = df["statement_labels"].apply(
+        lambda statements_labels: len(statements_labels)
+    )
+    assert number_of_statements.equals(
+        number_of_labels
+    ), "Error: not all statements are labeled!"
 
 
 def split_session(row, threshold, context):
@@ -153,7 +173,11 @@ def split_session(row, threshold, context):
     Returns:
         DataFrame: A DataFrame containing the splitted sessions.
     """
-    statements, truncated_session, session_id = row.statements, row.truncated_session, row.session_id
+    statements, truncated_session, session_id = (
+        row.statements,
+        row.truncated_session,
+        row.session_id,
+    )
     labels = row.statement_labels if "statement_labels" in row else []
     n_statements = len(statements)
     if n_statements > (threshold + context):
@@ -161,19 +185,38 @@ def split_session(row, threshold, context):
         start, prev_end = 0, 0
         end = threshold + context
         while end <= n_statements:
-            if end == n_statements:  # means that the stride has reached exactly last partition of statements
+            if (
+                end == n_statements
+            ):  # means that the stride has reached exactly last partition of statements
                 splitted_sessions.append(" ".join(statements[start:]))
                 context_indeces.append([el for el in range(context)])
                 splitted_labels.append(" -- ".join(labels[start:]))
             else:
-                splitted_sessions.append(" ".join(statements[start: end]))
+                splitted_sessions.append(" ".join(statements[start:end]))
                 if start == 0:
-                    context_indeces.append([el for el in range(len(statements[start: end]) -
-                                           1, len(statements[start: end]) - 1 - context, -1)])
+                    context_indeces.append(
+                        [
+                            el
+                            for el in range(
+                                len(statements[start:end]) - 1,
+                                len(statements[start:end]) - 1 - context,
+                                -1,
+                            )
+                        ]
+                    )
                 else:
-                    context_indeces.append([el for el in range(
-                        context)] + [el for el in range(len(statements[start: end]) - 1, len(statements[start: end]) - 1 - context, -1)])
-                splitted_labels.append(" -- ".join(labels[start: end]))
+                    context_indeces.append(
+                        [el for el in range(context)]
+                        + [
+                            el
+                            for el in range(
+                                len(statements[start:end]) - 1,
+                                len(statements[start:end]) - 1 - context,
+                                -1,
+                            )
+                        ]
+                    )
+                splitted_labels.append(" -- ".join(labels[start:end]))
             start += threshold - context
             prev_end = end
             end += threshold - context
@@ -182,19 +225,27 @@ def split_session(row, threshold, context):
             context_indeces.append([el for el in range(context)])
             splitted_labels.append(" -- ".join(labels[start:]))
 
-        split_data = pd.DataFrame({'sessions': splitted_sessions,
-                                   'labels': splitted_labels,
-                                   'session_id': [session_id] * len(splitted_labels),
-                                   'order_id': range(1, len(splitted_labels) + 1),
-                                   'indexes_statements_context': context_indeces})
+        split_data = pd.DataFrame(
+            {
+                "sessions": splitted_sessions,
+                "labels": splitted_labels,
+                "session_id": [session_id] * len(splitted_labels),
+                "order_id": range(1, len(splitted_labels) + 1),
+                "indexes_statements_context": context_indeces,
+            }
+        )
     else:
-        split_data = pd.DataFrame({'sessions': [truncated_session],
-                                  'labels':  [" -- ".join(labels)],
-                                   'session_id': [session_id],
-                                   'order_id': [1],
-                                   'indexes_statements_context': [[]]})
+        split_data = pd.DataFrame(
+            {
+                "sessions": [truncated_session],
+                "labels": [" -- ".join(labels)],
+                "session_id": [session_id],
+                "order_id": [1],
+                "indexes_statements_context": [[]],
+            }
+        )
     if len(labels) == 0:
-        _ = split_data.pop('labels')
+        _ = split_data.pop("labels")
     return split_data
 
 
@@ -225,12 +276,20 @@ def label_casting(ds, labels):
     """
     features = Features(
         {
-            'final_input': Sequence(feature=Value(dtype='string', id=None), length=-1, id=None),
-            'final_labels': Sequence(feature=ClassLabel(num_classes=len(labels), names=labels)),
-            'indexes_statements_context':  Sequence(feature=Value(dtype='int32', id=None), length=-1, id=None),
-            'indexes_words_context':  Sequence(feature=Value(dtype='int32', id=None), length=-1, id=None),
-            'session_id': Value(dtype='int32', id=None),
-            'order_id': Value(dtype='int32', id=None),
+            "final_input": Sequence(
+                feature=Value(dtype="string", id=None), length=-1, id=None
+            ),
+            "final_labels": Sequence(
+                feature=ClassLabel(num_classes=len(labels), names=labels)
+            ),
+            "indexes_statements_context": Sequence(
+                feature=Value(dtype="int32", id=None), length=-1, id=None
+            ),
+            "indexes_words_context": Sequence(
+                feature=Value(dtype="int32", id=None), length=-1, id=None
+            ),
+            "session_id": Value(dtype="int32", id=None),
+            "order_id": Value(dtype="int32", id=None),
         }
     )
     return ds.map(process_with_labels, features=features)
@@ -244,13 +303,16 @@ def process_with_labels(ex):
     Returns:
         dict: The processed dataset example.
     """
-    return {"final_input": ast.literal_eval(ex["final_input"]),
-            "final_labels": ast.literal_eval(ex["final_labels"]),
-            "session_id": int(ex["session_id"]),
-            "order_id": int(ex["order_id"]),
-            "indexes_statements_context": ast.literal_eval(ex["indexes_statements_context"]),
-            "indexes_words_context": ast.literal_eval(ex["indexes_words_context"])
-            }
+    return {
+        "final_input": ast.literal_eval(ex["final_input"]),
+        "final_labels": ast.literal_eval(ex["final_labels"]),
+        "session_id": int(ex["session_id"]),
+        "order_id": int(ex["order_id"]),
+        "indexes_statements_context": ast.literal_eval(
+            ex["indexes_statements_context"]
+        ),
+        "indexes_words_context": ast.literal_eval(ex["indexes_words_context"]),
+    }
 
 
 def inference_casting(ds):
@@ -263,11 +325,17 @@ def inference_casting(ds):
     """
     features = Features(
         {
-            'final_input': Sequence(feature=Value(dtype='string', id=None), length=-1, id=None),
-            'indexes_statements_context':  Sequence(feature=Value(dtype='int32', id=None), length=-1, id=None),
-            'indexes_words_context':  Sequence(feature=Value(dtype='int32', id=None), length=-1, id=None),
-            'session_id': Value(dtype='int32', id=None),
-            'order_id': Value(dtype='int32', id=None),
+            "final_input": Sequence(
+                feature=Value(dtype="string", id=None), length=-1, id=None
+            ),
+            "indexes_statements_context": Sequence(
+                feature=Value(dtype="int32", id=None), length=-1, id=None
+            ),
+            "indexes_words_context": Sequence(
+                feature=Value(dtype="int32", id=None), length=-1, id=None
+            ),
+            "session_id": Value(dtype="int32", id=None),
+            "order_id": Value(dtype="int32", id=None),
         }
     )
     return ds.map(process_without_labels, features=features)
@@ -281,12 +349,15 @@ def process_without_labels(ex):
     Returns:
         dict: The processed dataset example.
     """
-    return {"final_input": ast.literal_eval(ex["final_input"]),
-            "session_id": int(ex["session_id"]),
-            "order_id": int(ex["order_id"]),
-            "indexes_statements_context": ast.literal_eval(ex["indexes_statements_context"]),
-            "indexes_words_context": ast.literal_eval(ex["indexes_words_context"])
-            }
+    return {
+        "final_input": ast.literal_eval(ex["final_input"]),
+        "session_id": int(ex["session_id"]),
+        "order_id": int(ex["order_id"]),
+        "indexes_statements_context": ast.literal_eval(
+            ex["indexes_statements_context"]
+        ),
+        "indexes_words_context": ast.literal_eval(ex["indexes_words_context"]),
+    }
 
 
 def convert2id(sample, label2id):

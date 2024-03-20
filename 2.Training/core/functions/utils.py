@@ -24,9 +24,9 @@ def get_logger(filename, log_level):
     else:
         log_level = logging.WARNING
     if log_level in [logging.DEBUG, logging.INFO]:
-        logging.basicConfig(format='%(asctime)s - %(message)s')
+        logging.basicConfig(format="%(asctime)s - %(message)s")
     else:  # Only writing the into a log file
-        logging.basicConfig(filename=filename, format='%(asctime)s - %(message)s')
+        logging.basicConfig(filename=filename, format="%(asctime)s - %(message)s")
     logger = logging.getLogger()
     logger.setLevel(log_level)
     return logger
@@ -140,9 +140,9 @@ def recreate_sessions(chunks, aggregating_function):
         session_embedding = cls_embeddings[0]
     to_return = {
         "session_embedding": session_embedding,
-        "cluster": chunks["Clusters"].iloc[0]
+        "cluster": chunks["Clusters"].iloc[0],
     }
-    return pd.Series(to_return, index=['session_embedding', 'cluster'])
+    return pd.Series(to_return, index=["session_embedding", "cluster"])
 
 
 def obtain_unpadded_tensors(tensor_to_unpadd, masking_tensor):
@@ -153,15 +153,19 @@ def obtain_unpadded_tensors(tensor_to_unpadd, masking_tensor):
     Returns:
         Tensor: unpadded tensor
     """
-    flatten_masking_tensor = masking_tensor.reshape(masking_tensor.shape[0] * masking_tensor.shape[1])
-    mask = flatten_masking_tensor != - 100
-    flatten_tensor_to_unpadd = tensor_to_unpadd.reshape(tensor_to_unpadd.shape[0] * tensor_to_unpadd.shape[1], -1)
+    flatten_masking_tensor = masking_tensor.reshape(
+        masking_tensor.shape[0] * masking_tensor.shape[1]
+    )
+    mask = flatten_masking_tensor != -100
+    flatten_tensor_to_unpadd = tensor_to_unpadd.reshape(
+        tensor_to_unpadd.shape[0] * tensor_to_unpadd.shape[1], -1
+    )
     upadded_tensor = flatten_tensor_to_unpadd[mask]
     return upadded_tensor
 
 
 def expand_and_mask_tensor(tensor_to_expand, expanded_dim, masking_tensor):
-    """Function that expands and masks a tensor. 
+    """Function that expands and masks a tensor.
 
     Args:
         tensor_to_expand (Tensor): Tensor to expand
@@ -171,10 +175,13 @@ def expand_and_mask_tensor(tensor_to_expand, expanded_dim, masking_tensor):
     Returns:
         Tensor: Expanded and masked tensor.
     """
-    flatten_masking_tensor = masking_tensor.reshape(masking_tensor.shape[0] * masking_tensor.shape[1])
-    mask = flatten_masking_tensor != - 100
-    expanded_tensor = tensor_to_expand.expand(tensor_to_expand.shape[0], expanded_dim).reshape(
-        tensor_to_expand.shape[0]*expanded_dim)
+    flatten_masking_tensor = masking_tensor.reshape(
+        masking_tensor.shape[0] * masking_tensor.shape[1]
+    )
+    mask = flatten_masking_tensor != -100
+    expanded_tensor = tensor_to_expand.expand(
+        tensor_to_expand.shape[0], expanded_dim
+    ).reshape(tensor_to_expand.shape[0] * expanded_dim)
     return expanded_tensor[mask]
 
 

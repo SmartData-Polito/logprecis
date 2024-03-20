@@ -1,4 +1,12 @@
-from core.functions.preprocessing_functions import word_truncation, divide_statements, expand_labels, check_consistency_statement_labels, split_session, recreate_original_sessions, convert2id
+from core.functions.preprocessing_functions import (
+    word_truncation,
+    divide_statements,
+    expand_labels,
+    check_consistency_statement_labels,
+    split_session,
+    recreate_original_sessions,
+    convert2id,
+)
 from core.functions.utils import get_filename_from_path
 import pandas as pd
 import numpy as np
@@ -7,12 +15,13 @@ from datasets import DatasetDict, Dataset
 # To ignore verbose warnings
 import datasets  # nopep8
 import warnings  # nopep8
-warnings.simplefilter(action='ignore', category=FutureWarning)  # nopep8
+
+warnings.simplefilter(action="ignore", category=FutureWarning)  # nopep8
 datasets.utils.logging.set_verbosity(datasets.utils.logging.ERROR)  # nopep8
 datasets.utils.logging.enable_progress_bar()  # nopep8
 
 
-class DataHandler():
+class DataHandler:
     # Generic class to handle data. More specific handlers will inherit from this class
     def __init__(self, opts):
         """All DataHandlers will load a dataset > part of initialization that can be shared
@@ -21,6 +30,7 @@ class DataHandler():
         """
         self.experiment_seed = opts["seed"]
         self.dataset_name = get_filename_from_path(opts["input_data"])
+        # Useful to save the original dataset in case we want to export predictions
         self.dataset = self.load_data(opts["input_data"])
         self.final_dataset = None
         self.ds = None
@@ -35,13 +45,14 @@ class DataHandler():
             pandas.DataFrame or None: The loaded data. Returns a pandas DataFrame if the file format is CSV, Parquet, or JSON; otherwise, returns None.
         """
         if input_path.endswith("csv"):
-            return pd.read_csv(input_path)
+            df = pd.read_csv(input_path, lineterminator="\n")
         elif input_path.endswith("parquet"):
-            return pd.read_parquet(input_path)
+            df = pd.read_parquet(input_path)
         elif input_path.endswith("json"):
-            return pd.read_json(input_path, orient='index').reset_index(drop=True)
+            df = pd.read_json(input_path, orient="index").reset_index(drop=True)
         else:
             return None
+        return df.dropna()
 
     def preprocess_data(self):
         # Preprocessing is task specific, each subclass implement its own
@@ -54,12 +65,19 @@ class DataHandler():
             threshold_chars (int, optional): The maximum number of characters allowed for a word. Defaults to 35.
         """
         self.dataset["truncated_session"] = self.dataset["session"].apply(
-            word_truncation, max_length=threshold_chars)
+            word_truncation, max_length=threshold_chars
+        )
 
     def create_session_id(self):
         """Function to create an identifier > Useful when chunking the sessions.
+        Notice: since session_id must be an integer, remove the column if it already exists and it's a string.
         """
-        self.dataset = self.dataset.reset_index().rename({"index": "session_id"}, axis=1)
+        if "session_id" in self.dataset.columns:
+            # Replace it with numerical index
+            self.dataset.drop("session_id", axis=1, inplace=True)
+        self.dataset = self.dataset.reset_index().rename(
+            {"index": "session_id"}, axis=1
+        )
 
     def create_chunks(self):
         """Create chunks of sessions in the dataset.
@@ -69,7 +87,7 @@ class DataHandler():
         If truncation is set to 'simple_chunking', sessions are split into chunks of 17 statements.
         Otherwise, sessions are split into chunks of 14 statements with a context of 4 statements.
 
-        NOTICE: Numbers here are hardcoded and speicific for BASH
+        NOTICE: Numbers here are hardcoded (grid search over training data) and specific for BASH
         """
         if self.truncation == "default":
             threshold_n_stats, context = np.inf, 0
@@ -77,9 +95,18 @@ class DataHandler():
             threshold_n_stats, context = 17, 0
         else:
             threshold_n_stats, context = 14, 4
-        split_data = self.dataset.apply(split_session, threshold=threshold_n_stats,
-                                        context=context, axis=1)
+        split_data = self.dataset.apply(
+            split_session, threshold=threshold_n_stats, context=context, axis=1
+        )
         self.final_dataset = pd.concat(split_data.tolist(), ignore_index=True)
+
+    def select_subsample(self):
+        """Function that selects a subset of the data. Useful for debugging purposes or to make specific experiments (performance vs number of training samples)."""
+        original_shape = self.dataset.shape[0]
+        reduced_shape = int(original_shape * self.available_percentage)
+        self.dataset = self.dataset.sample(
+            frac=1, random_state=self.experiment_seed
+        ).iloc[:reduced_shape]
 
     def remove_faulty_splits(self, faulty_splits):
         """Remove sessions identified as faulty splits (sessions for which truncation failed).
@@ -90,10 +117,15 @@ class DataHandler():
             int: The number of session IDs removed from the dataset.
         """
         sessions_to_remove = faulty_splits["self"].values
-        session_ids_to_remove = self.dataset[self.dataset["truncated_session"].isin(
-            sessions_to_remove)]["session_id"].values
-        self.dataset = self.dataset[~self.dataset["session_id"].isin(session_ids_to_remove)]
-        self.final_dataset = self.final_dataset[~self.final_dataset["session_id"].isin(session_ids_to_remove)]
+        session_ids_to_remove = self.dataset[
+            self.dataset["truncated_session"].isin(sessions_to_remove)
+        ]["session_id"].values
+        self.dataset = self.dataset[
+            ~self.dataset["session_id"].isin(session_ids_to_remove)
+        ]
+        self.final_dataset = self.final_dataset[
+            ~self.final_dataset["session_id"].isin(session_ids_to_remove)
+        ]
         return len(session_ids_to_remove)
 
     def chunking_sanity_check(self, logger):
@@ -103,9 +135,17 @@ class DataHandler():
         Args:
             logger (Logger): A logger object for debugging and logging purposes.
         """
-        grouped_df = self.final_dataset.groupby("session_id").apply(recreate_original_sessions).reset_index()
-        sanity_check = self.dataset[["session_id", "truncated_session"]].merge(grouped_df, on="session_id")
-        faulty_splits = sanity_check["truncated_session"].compare(sanity_check["recreated_session"])
+        grouped_df = (
+            self.final_dataset.groupby("session_id")
+            .apply(recreate_original_sessions)
+            .reset_index()
+        )
+        sanity_check = self.dataset[["session_id", "truncated_session"]].merge(
+            grouped_df, on="session_id"
+        )
+        faulty_splits = sanity_check["truncated_session"].compare(
+            sanity_check["recreated_session"]
+        )
         n_faulty_sessions_ids = self.remove_faulty_splits(faulty_splits)
         logger.debug(f"\t\t\t{n_faulty_sessions_ids} sessions got discarded!")
 
@@ -117,12 +157,16 @@ class DataHandler():
             logger (Logger): A logger object for debugging and logging purposes.
         """
         self.dataset["statements"] = self.dataset["truncated_session"].apply(
-            divide_statements, add_special_token=False)
-        self.dataset["statements_special_token"] = self.dataset["truncated_session"].apply(
-            divide_statements, add_special_token=True)
+            divide_statements, add_special_token=False
+        )
+        self.dataset["statements_special_token"] = self.dataset[
+            "truncated_session"
+        ].apply(divide_statements, add_special_token=True)
         logger.experiment_logger.debug("\t\tExpand the labels...")
         if "labels" in self.dataset.columns:
-            self.dataset["statement_labels"] = self.dataset["labels"].apply(expand_labels)
+            self.dataset["statement_labels"] = self.dataset["labels"].apply(
+                expand_labels
+            )
             check_consistency_statement_labels(self.dataset)
 
     def select_subset_columns(self):
@@ -145,7 +189,9 @@ class DataHandler():
         session_ids = df_tmp.drop_duplicates("session_id")
         logger.debug(f"\tShuffle indexes according to seed...")
         session_ids = session_ids.sample(frac=1, random_state=self.experiment_seed)
-        train_indexes, valid_indexes = self.get_partitioned_indexes(session_ids, eval_size)
+        train_indexes, valid_indexes = self.get_partitioned_indexes(
+            session_ids, eval_size
+        )
         train_dataset = df_tmp[df_tmp["session_id"].isin(train_indexes)]
         valid_dataset = df_tmp[df_tmp["session_id"].isin(valid_indexes)]
         # Eventually, we must have 3 partitions > create an empty one for test!
@@ -162,8 +208,12 @@ class DataHandler():
             tuple: A tuple containing two arrays representing the training and validation session IDs.
         """
         train_size = 1 - eval_size
-        train_indexes = original_ids[:int(original_ids.shape[0] * train_size)].session_id
-        valid_indexes = original_ids[int(original_ids.shape[0] * train_size):].session_id
+        train_indexes = original_ids[
+            : int(original_ids.shape[0] * train_size)
+        ].session_id
+        valid_indexes = original_ids[
+            int(original_ids.shape[0] * train_size) :
+        ].session_id
         return train_indexes.values, valid_indexes.values
 
     def extract_test(self):
@@ -173,7 +223,11 @@ class DataHandler():
         Returns:
             tuple: A tuple containing three DataFrames representing the training, validation, and test datasets.
         """
-        test_dataset = self.select_subset_columns()
+        test_dataset = self.select_subset_columns().copy()
+        # Since we will gather the predictions for the test datasets, we need the chunks to be sorted according to:
+        #   - session_id
+        #   - order_id
+        test_dataset = test_dataset.sort_values(by=["session_id", "order_id"])
         # The other partitions are empty and only kept for compatibility
         train_dataset = pd.DataFrame(columns=test_dataset.columns)
         valid_dataset = pd.DataFrame(columns=test_dataset.columns)
@@ -190,15 +244,20 @@ class DataHandler():
             valid_dataset (DataFrame): The validation dataset in pandas DataFrame format.
             test_dataset (DataFrame): The test dataset in pandas DataFrame format.
         """
-        self.ds = DatasetDict({
-            'train': Dataset.from_pandas(train_dataset),
-            'valid': Dataset.from_pandas(valid_dataset),
-            'test': Dataset.from_pandas(test_dataset)}
+        self.ds = DatasetDict(
+            {
+                "train": Dataset.from_pandas(train_dataset),
+                "valid": Dataset.from_pandas(valid_dataset),
+                "test": Dataset.from_pandas(test_dataset),
+            }
         )
         for key in self.ds.keys():
-            if '__index_level_0__' in self.ds[key].column_names:
-                self.ds[key] = self.ds[key].remove_columns('__index_level_0__')
-        if "final_labels" in train_dataset.columns or "final_labels" in test_dataset.columns:
+            if "__index_level_0__" in self.ds[key].column_names:
+                self.ds[key] = self.ds[key].remove_columns("__index_level_0__")
+        if (
+            "final_labels" in train_dataset.columns
+            or "final_labels" in test_dataset.columns
+        ):
             self.ds = self.ds.map(convert2id, fn_kwargs={"label2id": self.labels2id})
 
     def set_tokenized_corpus(self, tokenized_corpus):

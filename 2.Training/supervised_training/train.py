@@ -1,4 +1,5 @@
 import sys  # nopep8
+
 sys.path.append("../")  # nopep8
 from core.functions.option_parser import get_training_options
 from core.classes.logger import ClassificationTrainingLogger

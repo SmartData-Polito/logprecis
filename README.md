@@ -31,7 +31,7 @@ It also explains how you should access the code.
 
 **Notice**: while, if you don't have you're own inference data, you cannot skip the first point of the pipeline (follow the `README` at `1.Dataset/Inference/`), you can already leverage both the domain adapted and finetuned models. Those are available on Huggingface:
 
-- Domain adapted (step 2): [SmartDataPolito/logprecis](https://huggingface.co/SmartDataPolito/logprecis)
+- Domain adapted (step 2): [SmartDataPolito/SecureShellBert](https://huggingface.co/SmartDataPolito/SecureShellBert)
 - Finetuned for intent detection (step 3): [SmartDataPolito/logprecis](https://huggingface.co/SmartDataPolito/logprecis)
 
 To load those models, simply use their names when running the scripts at `2.Training/supervised_training/` setting the parameter `model_name`.

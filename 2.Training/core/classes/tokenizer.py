@@ -1,14 +1,21 @@
 import os
 from transformers import AutoTokenizer
-from core.functions.tokenizer_functions import align_labels_with_statements, align_labels_with_tokens, mask_statement_context_predictions, mask_token_context_predictions
+from core.functions.tokenizer_functions import (
+    align_labels_with_statements,
+    align_labels_with_tokens,
+    mask_statement_context_predictions,
+    mask_token_context_predictions,
+)
 from core.functions.utils import create_dir
 
 
-class LogPrecisTokenizer():
+class LogPrecisTokenizer:
     def __init__(self, opts):
         self.tokenizer_name = opts["tokenizer_name"]
         self.classified_entity = opts["entity"]
         self.special_token = opts["special_token"]
+        self.max_chunk_length = opts["max_chunk_length"]
+        self.task = opts["task"]
         self.load_tokenizer()
 
     def load_tokenizer(self):
@@ -20,16 +27,21 @@ class LogPrecisTokenizer():
         """
         if not os.path.exists(self.tokenizer_name):
             # Default tokenizer, will be downloaded the first time and then cached in default cache folder
-            self.tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_name, add_prefix_space=True)
+            self.tokenizer = AutoTokenizer.from_pretrained(
+                self.tokenizer_name, add_prefix_space=True
+            )
             if self.classified_entity == "statement":
                 # Adding special token...
                 self.tokenizer.add_tokens([self.special_token], special_tokens=True)
-                self.id_special_token = self.tokenizer([self.special_token], is_split_into_words=True)["input_ids"][1]
+                self.id_special_token = self.tokenizer(
+                    [self.special_token], is_split_into_words=True
+                )["input_ids"][1]
         else:
             # If finetuned, no need to add token
             config_name = os.path.join(self.tokenizer_name, "tokenizer_config.json")
             self.tokenizer = AutoTokenizer.from_pretrained(
-                self.tokenizer_name, config=config_name, add_prefix_space=True)
+                self.tokenizer_name, config=config_name, add_prefix_space=True
+            )
 
     def tokenize_data(self, dataset_obj, logger):
         """Tokenize the dataset.
@@ -42,22 +54,60 @@ class LogPrecisTokenizer():
             logger (Logger): A logger object for logging and debugging purposes.
         """
         dataset_name = dataset_obj.dataset_name
-        cache_file_name = os.path.join(logger.experiment_dir, "cache", f"{dataset_name}_tokenized_corpus")
+        cache_file_name = os.path.join(
+            logger.experiment_dir, "cache", f"{dataset_name}_tokenized_corpus"
+        )
         create_dir(cache_file_name)
         ds = dataset_obj.ds
-        cache_file_names = {partition: os.path.join(cache_file_name, f"{partition}.arrow") for partition in ds.keys()}
-        # breakpoint()
+        cache_file_names = {
+            partition: os.path.join(cache_file_name, f"{partition}.arrow")
+            for partition in ds.keys()
+        }
+        tokenizing_function = (
+            self.mlm_tokenizing_function
+            if self.task == "self_supervision"
+            else self.entity_classification_tokenizing_function
+        )
         tokenized_datasets = ds.map(
-            self.tokenizing_function,
+            tokenizing_function,
             batched=True,
-            remove_columns=ds["train"].column_names if "train" in ds else ds["test"].column_names,
-            fn_kwargs={"max_length": self.tokenizer.model_max_length},
-            num_proc=20,
-            cache_file_names=cache_file_names
+            remove_columns=(
+                ds["train"].column_names if "train" in ds else ds["test"].column_names
+            ),
+            fn_kwargs={"max_length": self.max_chunk_length},
+            num_proc=1,
+            cache_file_names=cache_file_names,
         )
         dataset_obj.set_tokenized_corpus(tokenized_datasets)
 
-    def tokenizing_function(self, examples, max_length):
+    def mlm_tokenizing_function(self, examples, max_length):
+        """Tokenizing function for MLM from https://huggingface.co/learn/nlp-course/chapter7/3.
+        All tokenized sessions will be concatenated and chunked. Last chunks will be discarded if < max_length.
+        Args:
+            examples (dict): The input examples to be tokenized.
+            max_length (int): The maximum length allowed for the tokenized inputs.
+        Returns:
+            dict: The tokenized inputs and aligned labels.
+        """
+        #### Tokenize data ####
+        result = self.tokenizer(examples["final_input"], truncation=False)
+        #### Now, create chunks of max_lenght size ####
+        # Concatenate all texts
+        concatenated_examples = {k: sum(result[k], []) for k in result.keys()}
+        # Compute length of concatenated texts
+        total_length = len(concatenated_examples[list(result.keys())[0]])
+        # We drop the last chunk if it's smaller than chunk_size
+        total_length = (total_length // max_length) * max_length
+        # Split by chunks of max_len
+        result = {
+            k: [t[i : i + max_length] for i in range(0, total_length, max_length)]
+            for k, t in concatenated_examples.items()
+        }
+        # Create a new labels column (since self_supervised, labels come from data themselves)
+        result["labels"] = result["input_ids"].copy()
+        return result
+
+    def entity_classification_tokenizing_function(self, examples, max_length):
         """Tokenize examples.
         This method tokenizes the input examples using the provided tokenizer, truncating them if necessary,
         and aligns the labels with the tokenized inputs.
@@ -68,8 +118,12 @@ class LogPrecisTokenizer():
             dict: The tokenized inputs and aligned labels.
         """
         # First, handle the inputs (same function for training and inference)
-        tokenized_inputs = self.tokenizer(examples["final_input"], truncation=True,
-                                          is_split_into_words=True, max_length=max_length)
+        tokenized_inputs = self.tokenizer(
+            examples["final_input"],
+            truncation=True,
+            is_split_into_words=True,
+            max_length=max_length,
+        )
         # Get context statements and words
         list_context_statements = examples["indexes_statements_context"]
         list_context_words = examples["indexes_words_context"]
@@ -81,18 +135,36 @@ class LogPrecisTokenizer():
                 input_ids = tokenized_inputs["input_ids"][i]
                 if self.classified_entity == "statement":
                     context_statements = list_context_statements[i]
-                    new_labels.append(align_labels_with_statements(labels=labels, tokens_ids=input_ids,
-                                      special_token_id=self.id_special_token, context_statements=context_statements))
+                    new_labels.append(
+                        align_labels_with_statements(
+                            labels=labels,
+                            tokens_ids=input_ids,
+                            special_token_id=self.id_special_token,
+                            context_statements=context_statements,
+                        )
+                    )
                 elif self.classified_entity == "word":
                     word_ids = tokenized_inputs.word_ids(i)
                     context_words = list_context_words[i]
-                    new_labels.append(align_labels_with_tokens(labels=labels, word_ids=word_ids,
-                                      indexes_context_words=context_words, loss_per_token=False))
+                    new_labels.append(
+                        align_labels_with_tokens(
+                            labels=labels,
+                            word_ids=word_ids,
+                            indexes_context_words=context_words,
+                            loss_per_token=False,
+                        )
+                    )
                 elif self.classified_entity == "token":
                     word_ids = tokenized_inputs.word_ids(i)
                     context_words = list_context_words[i]
-                    new_labels.append(align_labels_with_tokens(labels=labels, word_ids=word_ids,
-                                      indexes_context_words=context_words, loss_per_token=True))
+                    new_labels.append(
+                        align_labels_with_tokens(
+                            labels=labels,
+                            word_ids=word_ids,
+                            indexes_context_words=context_words,
+                            loss_per_token=True,
+                        )
+                    )
             tokenized_inputs["labels"] = new_labels
         # If there are no labels, there will be no loss and we simply have to ignore the predictions for context words
         else:
@@ -102,11 +174,22 @@ class LogPrecisTokenizer():
                 word_ids = tokenized_inputs.word_ids(it)
                 input_ids = tokenized_inputs.input_ids[it]
                 if self.classified_entity == "statement":
-                    context_predictions.append(mask_statement_context_predictions(
-                        context_words=context_words, word_ids=word_ids, input_ids=input_ids, special_token_id=self.id_special_token))
+                    context_predictions.append(
+                        mask_statement_context_predictions(
+                            context_words=context_words,
+                            word_ids=word_ids,
+                            input_ids=input_ids,
+                            special_token_id=self.id_special_token,
+                        )
+                    )
                 else:
-                    context_predictions.append(mask_token_context_predictions(
-                        context_words=context_words, word_ids=word_ids, input_ids=input_ids))
+                    context_predictions.append(
+                        mask_token_context_predictions(
+                            context_words=context_words,
+                            word_ids=word_ids,
+                            input_ids=input_ids,
+                        )
+                    )
             # THE KEY MUST BE 'labels' (EVEN IF THERE ARE NO) > OTHERWISE DATA COLLATOR DOES NOT WORK!
             tokenized_inputs["labels"] = context_predictions
         tokenized_inputs["session_id"] = examples["session_id"]

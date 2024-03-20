@@ -1,4 +1,5 @@
 import sys  # nopep8
+
 sys.path.append("../")  # nopep8
 from core.functions.option_parser import get_inference_options
 from core.classes.logger import ClassificationInferenceLogger
@@ -10,7 +11,9 @@ from core.classes.tokenizer import LogPrecisTokenizer
 def run(opts):
     ### Experiment Initialization ###
     logger = ClassificationInferenceLogger(opts)
-    logger.experiment_logger.info(f"Inference/Testing with model '{opts['model_name']}' started!")
+    logger.experiment_logger.info(
+        f"Inference/Testing with model '{opts['model_name']}' started!"
+    )
     ### Tokenizer ###
     logger.experiment_logger.debug(f"Loading tokenizer...")
     tokenizer_obj = LogPrecisTokenizer(opts)

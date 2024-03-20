@@ -2,6 +2,15 @@
 
 LogPrécis is a powerful tool designed to automate and enhance the workflow of security experts by leveraging the capabilities of Language Models (LMs). With LogPrécis, you can efficiently analyze and extract valuable information from large-scale log data, significantly improving your incident response and threat-hunting processes.
 
+# Availability 🤗
+
+**Models** are available on [Huggingface](https://huggingface.co/SmartDataPolito):
+
+- [LogPrecis](https://huggingface.co/SmartDataPolito/logprecis): model to solve intents classification
+- [SecureShellBert](https://huggingface.co/SmartDataPolito/SecureShellBert): model adapted for Unix-Shell
+
+**Datasets** are available both in this [repo](https://github.com/SmartData-Polito/logprecis/tree/main/1.Dataset) and on the [SmartData site](https://smartdata.polito.it/logprecis/).
+
 ## Features
 
 - **Automated Log Analysis** LogPrécis utilizes advanced LMs to automatically analyze and process vast amounts of log data. It can understand and interpret log entries, allowing for the effective identification of security incidents, anomalies, and patterns.
@@ -21,7 +30,7 @@ git clone https://github.com/SmartData-Polito/logprecis.git
 2. Install the required dependencies:
 
 ```shell
-pip install -r requirements.txt
+conda create --name <env> --file requirements.txt
 ```
 
 ## Howto - Reproducibility

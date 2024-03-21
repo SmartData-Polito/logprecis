@@ -58,8 +58,13 @@ if __name__ == "__main__":
         "output_path": "results/",
         "use_date": False,
         "clean_start": True,
+<<<<<<< HEAD
         "input_data": "1.Dataset/Training/Self_supervised/training_set.csv",
         "validation_path": "1.Dataset/Training/Self_supervised/validation_set.csv",
+=======
+        "input_data": "../../1.Dataset/Training/Self_supervised/training_set.csv",
+        "validation_path": "../../1.Dataset/Training/Self_supervised/validation_set.csv",
+>>>>>>> 227a84852902d8192605a57f4c55b01b71168bdd
         "eval_size": 0.2,
         "truncation": "default",
         "available_percentage": 1.0,

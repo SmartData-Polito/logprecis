@@ -1,7 +1,8 @@
-########## RUN THIS FILE TO TRAIN THE EQUIVALENT OF `SmartDataPolito/SecureShellBert`
+########## RUN THIS FILE TO TRAIN THE EQUIVALENT OF `SmartDataPolito/SecureShellBert` 
+########## using the single_session rule to create batches.
 
 #Experiment info
-EXPERIMENT_IDENTIFIER="reproduce_secureshellbert" 
+EXPERIMENT_IDENTIFIER="reproduce_secureshellbert_single_session" 
 TASK="self_supervision"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"

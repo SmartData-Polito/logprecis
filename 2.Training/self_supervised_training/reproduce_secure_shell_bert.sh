@@ -1,7 +1,7 @@
 ########## RUN THIS FILE TO TRAIN THE EQUIVALENT OF `SmartDataPolito/SecureShellBert`
 
 #Experiment info
-EXPERIMENT_IDENTIFIER="reproduce_secureshellbert" 
+EXPERIMENT_IDENTIFIER="secureshellbert_secureBERT_exp1" 
 TASK="self_supervision"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"

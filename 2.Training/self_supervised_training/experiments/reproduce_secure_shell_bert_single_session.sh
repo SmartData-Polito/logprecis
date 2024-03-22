@@ -1,14 +1,15 @@
-########## RUN THIS FILE TO TRAIN THE EQUIVALENT OF `SmartDataPolito/SecureShellBert`
+########## RUN THIS FILE TO TRAIN THE EQUIVALENT OF `SmartDataPolito/SecureShellBert` 
+########## using the single_session rule to create batches.
 
 #Experiment info
-EXPERIMENT_IDENTIFIER="reproduce_secureshellbert" 
+EXPERIMENT_IDENTIFIER="reproduce_secureshellbert_single_session" 
 TASK="self_supervision"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"
 OUTPUT_PATH="./results/"
 
 #Model info
-MODEL_NAME="ehsanaghaei/SecureBERT" #Chosen model
+MODEL_NAME="microsoft/codebert-base" #Chosen model
 FINETUNED_PATH="" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted)
 TOKENIZER_NAME="microsoft/codebert-base" #if you use a finetuned tokenizer, specify the path 
 MAX_CHUNK_LENGTH=256

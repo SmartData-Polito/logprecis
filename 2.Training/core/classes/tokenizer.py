@@ -105,6 +105,34 @@ class LogPrecisTokenizer:
         }
         # Create a new labels column (since self_supervised, labels come from data themselves)
         result["labels"] = result["input_ids"].copy()
+        breakpoint()
+        return result
+
+    def mlm_tokenizing_function_single_session(self, examples, max_length):
+        """Tokenizing function that puts at maximum one session for each batch
+        Args:
+            examples (dict): The input examples to be tokenized.
+            max_length (int): The maximum length allowed for the tokenized inputs.
+        Returns:
+            dict: The tokenized inputs and aligned labels.
+        """
+        #### Tokenize data ####
+        result = self.tokenizer(examples["final_input"], truncation=False)
+        fill = [0] * (self.max_chunk_length)
+        tmp_attention = [[1]*len(sublist[:self.max_chunk_length]) + fill[len(sublist):] for sublist in result["input_ids"]]
+        
+        fill = [2] + [self.tokenizer.pad_token_id] * (self.max_chunk_length-1)
+        tmp_input = [
+            sublist[: self.max_chunk_length-1]
+            + fill[len(sublist[: self.max_chunk_length-1]):]
+            for sublist in result["input_ids"]
+        ]
+        #### Now, create chunks of max_lenght size ####
+        # Create a new labels column (since self_supervised, labels come from data themselves)
+        result["input_ids"] = tmp_input
+        result["attention_mask"] = tmp_attention
+        result["labels"] = result["input_ids"].copy()
+        #breakpoint()
         return result
 
     def entity_classification_tokenizing_function(self, examples, max_length):

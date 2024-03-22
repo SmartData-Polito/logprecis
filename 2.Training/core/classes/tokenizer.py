@@ -107,7 +107,7 @@ class LogPrecisTokenizer:
         result["labels"] = result["input_ids"].copy()
         breakpoint()
         return result
-
+    
     def mlm_tokenizing_function_single_session(self, examples, max_length):
         """Tokenizing function that puts at maximum one session for each batch
         Args:
@@ -118,21 +118,28 @@ class LogPrecisTokenizer:
         """
         #### Tokenize data ####
         result = self.tokenizer(examples["final_input"], truncation=False)
+        tmp = []
+        for r in result["input_ids"]:
+            if len(r) < self.max_chunk_length:
+                tmp.append(r)
+            for i in range(0, int(len(r)/self.max_chunk_length)):
+                if len(r[i*self.max_chunk_length:i*self.max_chunk_length+self.max_chunk_length]) > 10:
+                    tmp.append(r[i*self.max_chunk_length:i*self.max_chunk_length+self.max_chunk_length].copy())
         fill = [0] * (self.max_chunk_length)
-        tmp_attention = [[1]*len(sublist[:self.max_chunk_length]) + fill[len(sublist):] for sublist in result["input_ids"]]
-        
-        fill = [2] + [self.tokenizer.pad_token_id] * (self.max_chunk_length-1)
+        tmp_attention = [[1]*len(sublist[:self.max_chunk_length]) + fill[len(sublist):] for sublist in tmp]
+
+        fill = [self.tokenizer.pad_token_id]* (self.max_chunk_length)
         tmp_input = [
-            sublist[: self.max_chunk_length-1]
-            + fill[len(sublist[: self.max_chunk_length-1]):]
-            for sublist in result["input_ids"]
+            sublist[: self.max_chunk_length]
+            + fill[len(sublist[: self.max_chunk_length]):]
+            for sublist in tmp
         ]
         #### Now, create chunks of max_lenght size ####
         # Create a new labels column (since self_supervised, labels come from data themselves)
         result["input_ids"] = tmp_input
         result["attention_mask"] = tmp_attention
         result["labels"] = result["input_ids"].copy()
-        #breakpoint()
+
         return result
 
     def entity_classification_tokenizing_function(self, examples, max_length):

@@ -4,11 +4,11 @@ TASK="entity_classification"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"
 OUTPUT_PATH="./results/"
-SEED=118
+SEED=5
 
 #Input info
-INPUT_DATA="../../1.Dataset/Training/Supervised/Partition/118/sample_train_corpus.parquet"
-VALIDATION_PATH="../../1.Dataset/Training/Supervised/Partition/118/sample_test_corpus.parquet"
+INPUT_DATA="../../1.Dataset/Training/Supervised/Partition/5/sample_train_corpus.parquet"
+VALIDATION_PATH="../../1.Dataset/Training/Supervised/Partition/5/sample_test_corpus.parquet"
 
 #Model info
 MODEL_NAME="ehsanaghaei/SecureBERT" #Chosen model

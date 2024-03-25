@@ -105,7 +105,6 @@ class LogPrecisTokenizer:
         }
         # Create a new labels column (since self_supervised, labels come from data themselves)
         result["labels"] = result["input_ids"].copy()
-        breakpoint()
         return result
     
     def mlm_tokenizing_function_single_session(self, examples, max_length):

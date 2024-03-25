@@ -1,5 +1,7 @@
+########## RUN THIS FILE TO TRAIN THE EQUIVALENT OF `SmartDataPolito/logprecis`
+
 #Experiment details
-EXPERIMENT_IDENTIFIER="reproduce_logprecis_secureBERT" 
+EXPERIMENT_IDENTIFIER="reproduce_logprecis" 
 TASK="entity_classification"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"
@@ -11,9 +13,9 @@ INPUT_FOLDER="../../1.Dataset/Training/Supervised/full_supervised_corpus.json"
 EVAL_SIZE=0.0 
 
 #Model info
-MODEL_NAME="ehsanaghaei/SecureBERT" #Chosen model
-FINETUNED_PATH="../../2.Training/self_supervised_training/results/self_supervision/token/ehsanaghaei_SecureBERT/secureshellbert_WithTok/seed_1/best_model" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted) or online models
-TOKENIZER_NAME="ehsanaghaei/SecureBERT" #if you use a finetuned tokenizer, specify the path 
+MODEL_NAME="microsoft/codebert-base" #Chosen model
+FINETUNED_PATH="SmartDataPolito/SecureShellBert" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted) or online models
+TOKENIZER_NAME="microsoft/codebert-base" #if you use a finetuned tokenizer, specify the path 
 MAX_CHUNK_LENGTH=512
 
 #Training details

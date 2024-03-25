@@ -64,7 +64,7 @@ class LogPrecisTokenizer:
             for partition in ds.keys()
         }
         tokenizing_function = (
-            self.mlm_tokenizing_function
+            self.mlm_tokenizing_function_single_session
             if self.task == "self_supervision"
             else self.entity_classification_tokenizing_function
         )

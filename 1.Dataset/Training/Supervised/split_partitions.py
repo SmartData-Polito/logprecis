@@ -1,4 +1,5 @@
 import argparse
+import os
 import pandas as pd
 
 
@@ -16,6 +17,12 @@ def parse_arguments(args=None):
         type=float,
         default=0.2,
         help="Portion of data used for the test set wrt the training. Default to 0.2.",
+    )
+    parser.add_argument(
+        "--output_path",
+        type=str,
+        default="./Partition",
+        help="Output path where to save the corpus partition. Default",
     )
     args = parser.parse_args()
     return args
@@ -37,8 +44,12 @@ def split_partitions(args):
     print(
         f"Of these:\n\t- {train_df.shape[0]:,} will be used for training\n\t- {test_df.shape[0]:,} will be used for test"
     )
-    export_json(train_df, "sample_train_corpus.parquet")
-    export_json(test_df, "sample_test_corpus.parquet")
+    path_train = args.output_path + "/" + str(args.seed) 
+    path_test = args.output_path + "/" + str(args.seed)
+    os.makedirs(path_train, exist_ok = True) 
+    os.makedirs(path_test, exist_ok = True) 
+    export_json(train_df, (path_train + "/" + "sample_train_corpus.parquet"))
+    export_json(test_df, (path_test + "/" + "sample_test_corpus.parquet"))
 
 
 if __name__ == "__main__":

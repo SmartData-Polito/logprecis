@@ -7,15 +7,15 @@ TASK="entity_classification"
 LOG_LEVEL="info"
 
 #Model info
-MODEL_NAME="SmartDataPolito/logprecis"
+MODEL_NAME="ehsanaghaei/SecureBERT"
 FINETUNED_PATH="" #"Path_to_your_trained_model"
-TOKENIZER_NAME="SmartDataPolito/logprecis"
+TOKENIZER_NAME="ehsanaghaei/SecureBERT"
 MAX_CHUNK_LENGTH=512
 
 #Input info
 INPUT_FOLDER="../../1.Dataset/Inference/cyberlab_data.csv"
 TRUNCATION="context_chunking" #"default", "simple_chunking", "context_chunking"
-ENTITY="word"
+ENTITY="token"
 BATCH_SIZE=32
 
 #Output info > Used only if no finetuned path is specified

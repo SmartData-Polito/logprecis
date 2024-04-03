@@ -16,6 +16,7 @@ class LogPrecisTokenizer:
         self.special_token = opts["special_token"]
         self.max_chunk_length = opts["max_chunk_length"]
         self.task = opts["task"]
+        self.adaptation = opts["adaptation"]
         self.load_tokenizer()
 
     def load_tokenizer(self):
@@ -63,11 +64,18 @@ class LogPrecisTokenizer:
             partition: os.path.join(cache_file_name, f"{partition}.arrow")
             for partition in ds.keys()
         }
-        tokenizing_function = (
-            self.mlm_tokenizing_function_single_session
-            if self.task == "self_supervision"
-            else self.entity_classification_tokenizing_function
-        )
+        if self.adaptation == "single_session":
+            tokenizing_function = (
+                self.mlm_tokenizing_function_single_session
+                if self.task == "self_supervision"
+                else self.entity_classification_tokenizing_function
+            )
+        else:
+            tokenizing_function = (
+                self.mlm_tokenizing_function
+                if self.task == "self_supervision"
+                else self.entity_classification_tokenizing_function
+            )
         tokenized_datasets = ds.map(
             tokenizing_function,
             batched=True,

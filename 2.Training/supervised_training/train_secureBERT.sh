@@ -1,6 +1,6 @@
 
 #Experiment details
-EXPERIMENT_IDENTIFIER=("secureBERT_LR_00005" "secureBERT_LR_00001" "secureBERT_LR_000005" "secureBERT_LR_000001") 
+EXPERIMENT_IDENTIFIER=("baseline_LR_00005" "baseline_LR_00001" "baseline_LR_000005" "baseline_LR_000001") 
 TASK="entity_classification"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"
@@ -12,9 +12,9 @@ EVAL_SIZE=0.2
 SEED=777
 
 #Model info
-MODEL_NAME="ehsanaghaei/SecureBERT" #Chosen model
-FINETUNED_PATH="../../2.Training/self_supervised_training/results/self_supervision/token/ehsanaghaei_SecureBERT/secureBERT_LR_00005/seed_1/best_model" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted) or online models
-TOKENIZER_NAME="ehsanaghaei/SecureBERT" #if you use a finetuned tokenizer, specify the path 
+MODEL_NAME="microsoft/codebert-base" #Chosen model
+FINETUNED_PATH="../../2.Training/self_supervised_training/results/self_supervision/token/ehsanaghaei_SecureBERT/baseline_codeBERT_0.000075/seed_1/best_model" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted) or online models
+TOKENIZER_NAME="microsoft/codebert-base" #if you use a finetuned tokenizer, specify the path 
 MAX_CHUNK_LENGTH=512
 
 #Training details

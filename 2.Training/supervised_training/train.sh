@@ -8,7 +8,7 @@ OUTPUT_PATH="./results/"
 
 #Model info
 MODEL_NAME="ehsanaghaei/SecureBERT" #Chosen model
-FINETUNED_PATH="ehsanaghaei/SecureBERT" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted) or online models
+FINETUNED_PATH="../../2.Training/self_supervised_training/results/self_supervision/token/ehsanaghaei_SecureBERT/secureBERT_SS_LR_0001/seed_1/best_model" #Path, on your filesystem, to the finetuned model (e.g., if any domain-adapted) or online models
 TOKENIZER_NAME="ehsanaghaei/SecureBERT" #if you use a finetuned tokenizer, specify the path 
 MAX_CHUNK_LENGTH=512
 
@@ -22,7 +22,7 @@ AVAILABLE_PERCENTAGE=1
 for j in 0 1 2 3 4
 do
     #Experiment details
-    EXPERIMENT_IDENTIFIER=("secureBERT_no_DA_LR_00005" "secureBERT_no_DA_LR_00001" "secureBERT_no_DA_LR_000005" "secureBERT_no_DA_LR_000001") 
+    EXPERIMENT_IDENTIFIER=("secureBERT_SS_LR_00005" "secureBERT_SS_LR_00001" "secureBERT_SS_LR_000005" "secureBERT_SS_LR_000001") 
 
     #Input info
     INPUT_DATA="../../1.Dataset/Training/Supervised/Partition/${SEED[j]}/sample_train_corpus.parquet"

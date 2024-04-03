@@ -274,6 +274,13 @@ def get_inference_options(args=None):
                         Must be the path to the finetuned model.",
     )
     parser.add_argument(
+        "--adaptation",
+        type=str,
+        default="concatenated",
+        choices=["concatenated", "single_session"],
+        help="Type of adaptation used in the tokenizer. Default to concatenated",
+    )
+    parser.add_argument(
         "--tokenizer_name",
         type=str,
         required=True,

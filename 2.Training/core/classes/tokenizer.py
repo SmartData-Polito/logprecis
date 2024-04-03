@@ -70,7 +70,6 @@ class LogPrecisTokenizer:
                 if self.task == "self_supervision"
                 else self.entity_classification_tokenizing_function
             )
-            breakpoint()
         else:
             tokenizing_function = (
                 self.mlm_tokenizing_function

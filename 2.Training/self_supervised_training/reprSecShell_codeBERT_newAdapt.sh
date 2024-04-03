@@ -2,7 +2,7 @@
 ########## using the single_session rule to create batches.
 
 #Experiment info
-EXPERIMENT_IDENTIFIER=("reproduce_secureshellbert_single_session_0.00005" "reproduce_secureshellbert_single_session_0.000001" "reproduce_secureshellbert_single_session_0.000005") 
+EXPERIMENT_IDENTIFIER=("reproduce_secureshellbert_single_session_0.000001" "reproduce_secureshellbert_single_session_0.000005") 
 TASK="self_supervision"
 DEVICES=0 #if running on cpu, add --no_cuda below
 LOG_LEVEL="info"
@@ -17,7 +17,7 @@ MAX_CHUNK_LENGTH=256
 #Training details
 BATCH_SIZE=16 #or 8
 EPOCHS=10 #Training epochs
-LR=(0.00005 0.000001 0.000005)
+LR=(0.00001 0.00005 0.000075)
 MLM_PROBABILITY=0.15
 
 #Input info

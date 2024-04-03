@@ -11,6 +11,7 @@ from core.classes.tokenizer import LogPrecisTokenizer
 def run(opts):
     ### Experiment Initialization ###
     logger = TrainingExperimentLogger(opts)
+    breakpoint()
     logger.experiment_logger.info(f"Experiment '{opts['identifier']}' started!")
     ### Dataset ###
     logger.experiment_logger.info(f"Loading and processing the dataset...")

@@ -201,7 +201,7 @@ class LogPrecisModel:
                     average="macro",
                     zero_division=0.0,
                 )
-            scores[metric_name] = score
+            scores[metric_name] = score[metric_name]
             logger.tensorboard_writer.add_scalar(
                 f"macro_{metric_name}/{partition}", score[metric_name], epoch
             )
@@ -549,18 +549,20 @@ class LogPrecisModel:
                 )
                 # Also save nlp scores
                 scores["rouge1"], scores["rouge2"], scores["fidelity"] = (
-                    rouge_1,
-                    rouge_2,
-                    fidelity,
+                    rouge_1[0],
+                    rouge_2[0],
+                    fidelity[0],
                 )
                 # Eventually, add the loss
                 scores["loss"] = np.mean(losses)
+                
                 ######  BEST MODEL UPDATE  ######
                 current_metric = (
                     scores[self.observed_val_metric]
                     if self.observed_val_metric != "loss"
                     else -scores[self.observed_val_metric]
                 )
+                breakpoint()
                 if current_metric > best_metric:
                     best_epoch = 1
                     self.best_model = deepcopy(self.model).to("cpu")

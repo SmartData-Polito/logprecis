@@ -7,8 +7,8 @@ TASK="entity_classification"
 LOG_LEVEL="info"
 
 #Model info
-MODEL_NAME="ehsanaghaei/SecureBERT"
-TOKENIZER_NAME="ehsanaghaei/SecureBERT"
+MODEL_NAME="SmartDataPolito/logprecis"
+TOKENIZER_NAME="SmartDataPolito/logprecis"
 MAX_CHUNK_LENGTH=512
 
 #Input info
@@ -21,9 +21,9 @@ OUTPUT_PATH="./results/"
 
 for j in 0 1 2 3 4
 do
-    IDENTIFIER="inference_SecureBERT_seed_${SEED[j]}"
+    IDENTIFIER="test_fidelity_seed_${SEED[j]}"
     
-    FINETUNED_PATH="../../2.Training/supervised_training/results/entity_classification/token/ehsanaghaei_SecureBERT/secureBERT_LR_000005/seed_${SEED[j]}/best_model" #"Path_to_your_trained_model"
+    FINETUNED_PATH="SmartDataPolito/logprecis" #"Path_to_your_trained_model"
     
     INPUT_FOLDER="../../1.Dataset/Training/Supervised/Partition/${SEED[j]}/sample_test_corpus.parquet"
 
@@ -33,5 +33,5 @@ do
         --truncation "$TRUNCATION" --log_level "$LOG_LEVEL" \
         --entity "$ENTITY" --batch_size "$BATCH_SIZE" --max_chunk_length "$MAX_CHUNK_LENGTH" \
         --input_data "$INPUT_FOLDER" --finetuned_path "$FINETUNED_PATH" \
-        --output_path "$OUTPUT_PATH" --identifier "$IDENTIFIER"
+        --output_path "$OUTPUT_PATH" --identifier "$IDENTIFIER" --no_cuda
 done

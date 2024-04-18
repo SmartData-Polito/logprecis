@@ -1,0 +1,1405 @@
+,step,tag,value
+0,0,Is_best,1.0
+1,1,Is_best,1.0
+2,2,Is_best,1.0
+3,3,Is_best,1.0
+4,4,Is_best,1.0
+5,5,Is_best,1.0
+6,6,Is_best,1.0
+7,7,Is_best,1.0
+8,8,Is_best,1.0
+9,9,Is_best,1.0
+10,10,Is_best,0.0
+11,11,Is_best,1.0
+12,12,Is_best,0.0
+13,13,Is_best,0.0
+14,14,Is_best,1.0
+15,15,Is_best,1.0
+16,16,Is_best,0.0
+17,17,Is_best,0.0
+18,18,Is_best,0.0
+19,19,Is_best,0.0
+20,20,Is_best,1.0
+21,21,Is_best,0.0
+22,22,Is_best,0.0
+23,23,Is_best,0.0
+24,24,Is_best,0.0
+25,25,Is_best,0.0
+26,26,Is_best,0.0
+27,27,Is_best,0.0
+28,28,Is_best,0.0
+29,29,Is_best,0.0
+30,30,Is_best,0.0
+31,31,Is_best,0.0
+32,32,Is_best,0.0
+33,33,Is_best,0.0
+34,34,Is_best,0.0
+35,35,Is_best,0.0
+36,36,Is_best,0.0
+37,37,Is_best,0.0
+38,38,Is_best,0.0
+39,39,Is_best,0.0
+40,40,Is_best,0.0
+41,41,Is_best,0.0
+42,42,Is_best,0.0
+43,43,Is_best,0.0
+44,44,Is_best,0.0
+45,45,Is_best,0.0
+46,46,Is_best,0.0
+47,47,Is_best,0.0
+48,48,Is_best,0.0
+49,49,Is_best,0.0
+50,0,Loss_epoch/train,1.5102934837341309
+51,1,Loss_epoch/train,1.0864390134811401
+52,2,Loss_epoch/train,0.9126491546630859
+53,3,Loss_epoch/train,0.7260119318962097
+54,4,Loss_epoch/train,0.6517781615257263
+55,5,Loss_epoch/train,0.5496602654457092
+56,6,Loss_epoch/train,0.49280861020088196
+57,7,Loss_epoch/train,0.43267273902893066
+58,8,Loss_epoch/train,0.3931250274181366
+59,9,Loss_epoch/train,0.35478368401527405
+60,10,Loss_epoch/train,0.31554821133613586
+61,11,Loss_epoch/train,0.2725895345211029
+62,12,Loss_epoch/train,0.2568815052509308
+63,13,Loss_epoch/train,0.2271462231874466
+64,14,Loss_epoch/train,0.21589918434619904
+65,15,Loss_epoch/train,0.19021379947662354
+66,16,Loss_epoch/train,0.17543305456638336
+67,17,Loss_epoch/train,0.16225560009479523
+68,18,Loss_epoch/train,0.13955089449882507
+69,19,Loss_epoch/train,0.12915928661823273
+70,20,Loss_epoch/train,0.10636347532272339
+71,21,Loss_epoch/train,0.09462985396385193
+72,22,Loss_epoch/train,0.08278761059045792
+73,23,Loss_epoch/train,0.07647072523832321
+74,24,Loss_epoch/train,0.08938124030828476
+75,25,Loss_epoch/train,0.06716949492692947
+76,26,Loss_epoch/train,0.06283628195524216
+77,27,Loss_epoch/train,0.052984464913606644
+78,28,Loss_epoch/train,0.05177454277873039
+79,29,Loss_epoch/train,0.05116717144846916
+80,30,Loss_epoch/train,0.052740443497896194
+81,31,Loss_epoch/train,0.04829108342528343
+82,32,Loss_epoch/train,0.051486868411302567
+83,33,Loss_epoch/train,0.04872896149754524
+84,34,Loss_epoch/train,0.04936141148209572
+85,35,Loss_epoch/train,0.04905182123184204
+86,36,Loss_epoch/train,0.052764926105737686
+87,37,Loss_epoch/train,0.048876065760850906
+88,38,Loss_epoch/train,0.048776865005493164
+89,39,Loss_epoch/train,0.0476803295314312
+90,40,Loss_epoch/train,0.05331701040267944
+91,41,Loss_epoch/train,0.05080553889274597
+92,42,Loss_epoch/train,0.05060117319226265
+93,43,Loss_epoch/train,0.04709972068667412
+94,44,Loss_epoch/train,0.0485365092754364
+95,45,Loss_epoch/train,0.0525897778570652
+96,46,Loss_epoch/train,0.04970961809158325
+97,47,Loss_epoch/train,0.04696884751319885
+98,48,Loss_epoch/train,0.04855722188949585
+99,49,Loss_epoch/train,0.04629693925380707
+100,0,Loss_epoch/validation,1.2204492092132568
+101,1,Loss_epoch/validation,0.9669799208641052
+102,2,Loss_epoch/validation,0.8587087392807007
+103,3,Loss_epoch/validation,0.7987978458404541
+104,4,Loss_epoch/validation,0.6983231902122498
+105,5,Loss_epoch/validation,0.6573854088783264
+106,6,Loss_epoch/validation,0.6305662393569946
+107,7,Loss_epoch/validation,0.5776978731155396
+108,8,Loss_epoch/validation,0.560424268245697
+109,9,Loss_epoch/validation,0.5218819379806519
+110,10,Loss_epoch/validation,0.5352327823638916
+111,11,Loss_epoch/validation,0.513431966304779
+112,12,Loss_epoch/validation,0.5143965482711792
+113,13,Loss_epoch/validation,0.5192628502845764
+114,14,Loss_epoch/validation,0.47749727964401245
+115,15,Loss_epoch/validation,0.43215370178222656
+116,16,Loss_epoch/validation,0.45823878049850464
+117,17,Loss_epoch/validation,0.4549722969532013
+118,18,Loss_epoch/validation,0.44151803851127625
+119,19,Loss_epoch/validation,0.4371591806411743
+120,20,Loss_epoch/validation,0.4069770574569702
+121,21,Loss_epoch/validation,0.44120267033576965
+122,22,Loss_epoch/validation,0.4245109558105469
+123,23,Loss_epoch/validation,0.437886118888855
+124,24,Loss_epoch/validation,0.48227018117904663
+125,25,Loss_epoch/validation,0.45469826459884644
+126,26,Loss_epoch/validation,0.4474145472049713
+127,27,Loss_epoch/validation,0.45360687375068665
+128,28,Loss_epoch/validation,0.4519363045692444
+129,29,Loss_epoch/validation,0.45026063919067383
+130,30,Loss_epoch/validation,0.44905468821525574
+131,31,Loss_epoch/validation,0.4489661753177643
+132,32,Loss_epoch/validation,0.44867783784866333
+133,33,Loss_epoch/validation,0.4489539563655853
+134,34,Loss_epoch/validation,0.44898274540901184
+135,35,Loss_epoch/validation,0.4496258497238159
+136,36,Loss_epoch/validation,0.4496566653251648
+137,37,Loss_epoch/validation,0.4496172368526459
+138,38,Loss_epoch/validation,0.4495358169078827
+139,39,Loss_epoch/validation,0.4496288299560547
+140,40,Loss_epoch/validation,0.4496506452560425
+141,41,Loss_epoch/validation,0.44973403215408325
+142,42,Loss_epoch/validation,0.4499489367008209
+143,43,Loss_epoch/validation,0.45015132427215576
+144,44,Loss_epoch/validation,0.45015543699264526
+145,45,Loss_epoch/validation,0.4500004053115845
+146,46,Loss_epoch/validation,0.4500047564506531
+147,47,Loss_epoch/validation,0.4500124156475067
+148,48,Loss_epoch/validation,0.4500376582145691
+149,49,Loss_epoch/validation,0.45003965497016907
+150,1,macro_accuracy/best_validation,0.8794448971748352
+151,0,macro_accuracy/validation,0.6596704125404358
+152,1,macro_accuracy/validation,0.7054640054702759
+153,2,macro_accuracy/validation,0.7533391118049622
+154,3,macro_accuracy/validation,0.7722463011741638
+155,4,macro_accuracy/validation,0.7944492697715759
+156,5,macro_accuracy/validation,0.8178664445877075
+157,6,macro_accuracy/validation,0.8404163122177124
+158,7,macro_accuracy/validation,0.8489158749580383
+159,8,macro_accuracy/validation,0.8468343615531921
+160,9,macro_accuracy/validation,0.8511708378791809
+161,10,macro_accuracy/validation,0.854293167591095
+162,11,macro_accuracy/validation,0.8525585532188416
+163,12,macro_accuracy/validation,0.8560277819633484
+164,13,macro_accuracy/validation,0.8617519736289978
+165,14,macro_accuracy/validation,0.8624457716941833
+166,15,macro_accuracy/validation,0.8804857134819031
+167,16,macro_accuracy/validation,0.8747614622116089
+168,17,macro_accuracy/validation,0.8763226270675659
+169,18,macro_accuracy/validation,0.8766695857048035
+170,19,macro_accuracy/validation,0.8784041404724121
+171,20,macro_accuracy/validation,0.8794448971748352
+172,21,macro_accuracy/validation,0.8780572414398193
+173,22,macro_accuracy/validation,0.8792714476585388
+174,23,macro_accuracy/validation,0.8761491775512695
+175,24,macro_accuracy/validation,0.8744145631790161
+176,25,macro_accuracy/validation,0.8830875754356384
+177,26,macro_accuracy/validation,0.8806591629981995
+178,27,macro_accuracy/validation,0.8808326125144958
+179,28,macro_accuracy/validation,0.8815264701843262
+180,29,macro_accuracy/validation,0.8820468187332153
+181,30,macro_accuracy/validation,0.8822202682495117
+182,31,macro_accuracy/validation,0.8820468187332153
+183,32,macro_accuracy/validation,0.8820468187332153
+184,33,macro_accuracy/validation,0.8822202682495117
+185,34,macro_accuracy/validation,0.8823937773704529
+186,35,macro_accuracy/validation,0.8822202682495117
+187,36,macro_accuracy/validation,0.8822202682495117
+188,37,macro_accuracy/validation,0.8822202682495117
+189,38,macro_accuracy/validation,0.8822202682495117
+190,39,macro_accuracy/validation,0.8822202682495117
+191,40,macro_accuracy/validation,0.8822202682495117
+192,41,macro_accuracy/validation,0.8822202682495117
+193,42,macro_accuracy/validation,0.8822202682495117
+194,43,macro_accuracy/validation,0.8820468187332153
+195,44,macro_accuracy/validation,0.8820468187332153
+196,45,macro_accuracy/validation,0.8820468187332153
+197,46,macro_accuracy/validation,0.8820468187332153
+198,47,macro_accuracy/validation,0.8820468187332153
+199,48,macro_accuracy/validation,0.8820468187332153
+200,49,macro_accuracy/validation,0.8820468187332153
+201,1,macro_f1/best_validation,0.6906313896179199
+202,0,macro_f1/validation,0.21192370355129242
+203,1,macro_f1/validation,0.2554115056991577
+204,2,macro_f1/validation,0.31681308150291443
+205,3,macro_f1/validation,0.3342805802822113
+206,4,macro_f1/validation,0.3531283140182495
+207,5,macro_f1/validation,0.3788875639438629
+208,6,macro_f1/validation,0.38736507296562195
+209,7,macro_f1/validation,0.40451595187187195
+210,8,macro_f1/validation,0.39957496523857117
+211,9,macro_f1/validation,0.4222750961780548
+212,10,macro_f1/validation,0.4116579592227936
+213,11,macro_f1/validation,0.4585058093070984
+214,12,macro_f1/validation,0.5070816278457642
+215,13,macro_f1/validation,0.48034849762916565
+216,14,macro_f1/validation,0.564146876335144
+217,15,macro_f1/validation,0.6524068713188171
+218,16,macro_f1/validation,0.6505039930343628
+219,17,macro_f1/validation,0.6572498679161072
+220,18,macro_f1/validation,0.6808568239212036
+221,19,macro_f1/validation,0.6571632623672485
+222,20,macro_f1/validation,0.6906313896179199
+223,21,macro_f1/validation,0.6990962028503418
+224,22,macro_f1/validation,0.6879965662956238
+225,23,macro_f1/validation,0.6867125630378723
+226,24,macro_f1/validation,0.6895959377288818
+227,25,macro_f1/validation,0.7103932499885559
+228,26,macro_f1/validation,0.7031000852584839
+229,27,macro_f1/validation,0.7039549350738525
+230,28,macro_f1/validation,0.705217182636261
+231,29,macro_f1/validation,0.7070573568344116
+232,30,macro_f1/validation,0.6970490217208862
+233,31,macro_f1/validation,0.6961324214935303
+234,32,macro_f1/validation,0.6961212754249573
+235,33,macro_f1/validation,0.6970490217208862
+236,34,macro_f1/validation,0.6971232295036316
+237,35,macro_f1/validation,0.6970490217208862
+238,36,macro_f1/validation,0.6969934105873108
+239,37,macro_f1/validation,0.6970045566558838
+240,38,macro_f1/validation,0.6965814232826233
+241,39,macro_f1/validation,0.6965814232826233
+242,40,macro_f1/validation,0.6965814232826233
+243,41,macro_f1/validation,0.6970045566558838
+244,42,macro_f1/validation,0.6966397762298584
+245,43,macro_f1/validation,0.6964630484580994
+246,44,macro_f1/validation,0.6968861222267151
+247,45,macro_f1/validation,0.6964630484580994
+248,46,macro_f1/validation,0.6964630484580994
+249,47,macro_f1/validation,0.6964630484580994
+250,48,macro_f1/validation,0.6964630484580994
+251,49,macro_f1/validation,0.6964630484580994
+252,1,macro_precision/best_validation,0.7486604452133179
+253,0,macro_precision/validation,0.19081468880176544
+254,1,macro_precision/validation,0.32998913526535034
+255,2,macro_precision/validation,0.47891101241111755
+256,3,macro_precision/validation,0.40670251846313477
+257,4,macro_precision/validation,0.4390222132205963
+258,5,macro_precision/validation,0.461025208234787
+259,6,macro_precision/validation,0.46431800723075867
+260,7,macro_precision/validation,0.467149943113327
+261,8,macro_precision/validation,0.45820915699005127
+262,9,macro_precision/validation,0.5061771273612976
+263,10,macro_precision/validation,0.4847725033760071
+264,11,macro_precision/validation,0.5788154602050781
+265,12,macro_precision/validation,0.6401406526565552
+266,13,macro_precision/validation,0.6343059539794922
+267,14,macro_precision/validation,0.7381636500358582
+268,15,macro_precision/validation,0.7632361650466919
+269,16,macro_precision/validation,0.8049100041389465
+270,17,macro_precision/validation,0.7737579941749573
+271,18,macro_precision/validation,0.7575237154960632
+272,19,macro_precision/validation,0.7811024188995361
+273,20,macro_precision/validation,0.7486604452133179
+274,21,macro_precision/validation,0.7764842510223389
+275,22,macro_precision/validation,0.7875232100486755
+276,23,macro_precision/validation,0.7707096338272095
+277,24,macro_precision/validation,0.789628267288208
+278,25,macro_precision/validation,0.7936645150184631
+279,26,macro_precision/validation,0.8088436126708984
+280,27,macro_precision/validation,0.8109427690505981
+281,28,macro_precision/validation,0.8122849464416504
+282,29,macro_precision/validation,0.8139886260032654
+283,30,macro_precision/validation,0.8147149682044983
+284,31,macro_precision/validation,0.8134946823120117
+285,32,macro_precision/validation,0.8134799003601074
+286,33,macro_precision/validation,0.8147149682044983
+287,34,macro_precision/validation,0.8147802352905273
+288,35,macro_precision/validation,0.8147149682044983
+289,36,macro_precision/validation,0.8150101900100708
+290,37,macro_precision/validation,0.8150248527526855
+291,38,macro_precision/validation,0.8144428133964539
+292,39,macro_precision/validation,0.8144428133964539
+293,40,macro_precision/validation,0.8144428133964539
+294,41,macro_precision/validation,0.8150248527526855
+295,42,macro_precision/validation,0.8145775198936462
+296,43,macro_precision/validation,0.8146964311599731
+297,44,macro_precision/validation,0.8152784109115601
+298,45,macro_precision/validation,0.8146964311599731
+299,46,macro_precision/validation,0.8146964311599731
+300,47,macro_precision/validation,0.8146964311599731
+301,48,macro_precision/validation,0.8146964311599731
+302,49,macro_precision/validation,0.8146964311599731
+303,1,macro_recall/best_validation,0.7248056530952454
+304,0,macro_recall/validation,0.25449299812316895
+305,1,macro_recall/validation,0.2738330364227295
+306,2,macro_recall/validation,0.32303470373153687
+307,3,macro_recall/validation,0.3464372158050537
+308,4,macro_recall/validation,0.3576652705669403
+309,5,macro_recall/validation,0.3946901559829712
+310,6,macro_recall/validation,0.4054875671863556
+311,7,macro_recall/validation,0.4221011996269226
+312,8,macro_recall/validation,0.41773736476898193
+313,9,macro_recall/validation,0.4296366572380066
+314,10,macro_recall/validation,0.42744773626327515
+315,11,macro_recall/validation,0.4554726183414459
+316,12,macro_recall/validation,0.486074298620224
+317,13,macro_recall/validation,0.46722733974456787
+318,14,macro_recall/validation,0.5269075036048889
+319,15,macro_recall/validation,0.6401199698448181
+320,16,macro_recall/validation,0.6235117316246033
+321,17,macro_recall/validation,0.675679087638855
+322,18,macro_recall/validation,0.7014258503913879
+323,19,macro_recall/validation,0.6958655118942261
+324,20,macro_recall/validation,0.7248056530952454
+325,21,macro_recall/validation,0.7203594446182251
+326,22,macro_recall/validation,0.7164507508277893
+327,23,macro_recall/validation,0.7137879729270935
+328,24,macro_recall/validation,0.7190532684326172
+329,25,macro_recall/validation,0.7282031178474426
+330,26,macro_recall/validation,0.7225605845451355
+331,27,macro_recall/validation,0.7206496000289917
+332,28,macro_recall/validation,0.720851719379425
+333,29,macro_recall/validation,0.7231706380844116
+334,30,macro_recall/validation,0.715162456035614
+335,31,macro_recall/validation,0.7150707840919495
+336,32,macro_recall/validation,0.7150707840919495
+337,33,macro_recall/validation,0.715162456035614
+338,34,macro_recall/validation,0.7152541875839233
+339,35,macro_recall/validation,0.715162456035614
+340,36,macro_recall/validation,0.715162456035614
+341,37,macro_recall/validation,0.715162456035614
+342,38,macro_recall/validation,0.715162456035614
+343,39,macro_recall/validation,0.715162456035614
+344,40,macro_recall/validation,0.715162456035614
+345,41,macro_recall/validation,0.715162456035614
+346,42,macro_recall/validation,0.715121328830719
+347,43,macro_recall/validation,0.7150707840919495
+348,44,macro_recall/validation,0.7150707840919495
+349,45,macro_recall/validation,0.7150707840919495
+350,46,macro_recall/validation,0.7150707840919495
+351,47,macro_recall/validation,0.7150707840919495
+352,48,macro_recall/validation,0.7150707840919495
+353,49,macro_recall/validation,0.7150707840919495
+354,0,micro_fscore/validation/Defense Evasion,0.0
+355,1,micro_fscore/validation/Defense Evasion,0.0
+356,2,micro_fscore/validation/Defense Evasion,0.0
+357,3,micro_fscore/validation/Defense Evasion,0.0
+358,4,micro_fscore/validation/Defense Evasion,0.0
+359,5,micro_fscore/validation/Defense Evasion,0.0
+360,6,micro_fscore/validation/Defense Evasion,0.0
+361,7,micro_fscore/validation/Defense Evasion,0.0
+362,8,micro_fscore/validation/Defense Evasion,0.0
+363,9,micro_fscore/validation/Defense Evasion,0.0
+364,10,micro_fscore/validation/Defense Evasion,0.0
+365,11,micro_fscore/validation/Defense Evasion,0.020408162847161293
+366,12,micro_fscore/validation/Defense Evasion,0.24561403691768646
+367,13,micro_fscore/validation/Defense Evasion,0.11538461595773697
+368,14,micro_fscore/validation/Defense Evasion,0.40310078859329224
+369,15,micro_fscore/validation/Defense Evasion,0.5568181872367859
+370,16,micro_fscore/validation/Defense Evasion,0.6341463327407837
+371,17,micro_fscore/validation/Defense Evasion,0.6198347210884094
+372,18,micro_fscore/validation/Defense Evasion,0.6377952694892883
+373,19,micro_fscore/validation/Defense Evasion,0.6231883764266968
+374,20,micro_fscore/validation/Defense Evasion,0.6267605423927307
+375,21,micro_fscore/validation/Defense Evasion,0.6953125
+376,22,micro_fscore/validation/Defense Evasion,0.6308243870735168
+377,23,micro_fscore/validation/Defense Evasion,0.6819923520088196
+378,24,micro_fscore/validation/Defense Evasion,0.7355371713638306
+379,25,micro_fscore/validation/Defense Evasion,0.7542372941970825
+380,26,micro_fscore/validation/Defense Evasion,0.7295082211494446
+381,27,micro_fscore/validation/Defense Evasion,0.7416666746139526
+382,28,micro_fscore/validation/Defense Evasion,0.7478991746902466
+383,29,micro_fscore/validation/Defense Evasion,0.7542372941970825
+384,30,micro_fscore/validation/Defense Evasion,0.757446825504303
+385,31,micro_fscore/validation/Defense Evasion,0.7510548233985901
+386,32,micro_fscore/validation/Defense Evasion,0.7510548233985901
+387,33,micro_fscore/validation/Defense Evasion,0.757446825504303
+388,34,micro_fscore/validation/Defense Evasion,0.757446825504303
+389,35,micro_fscore/validation/Defense Evasion,0.757446825504303
+390,36,micro_fscore/validation/Defense Evasion,0.757446825504303
+391,37,micro_fscore/validation/Defense Evasion,0.757446825504303
+392,38,micro_fscore/validation/Defense Evasion,0.7542372941970825
+393,39,micro_fscore/validation/Defense Evasion,0.7542372941970825
+394,40,micro_fscore/validation/Defense Evasion,0.7542372941970825
+395,41,micro_fscore/validation/Defense Evasion,0.757446825504303
+396,42,micro_fscore/validation/Defense Evasion,0.7542372941970825
+397,43,micro_fscore/validation/Defense Evasion,0.7542372941970825
+398,44,micro_fscore/validation/Defense Evasion,0.757446825504303
+399,45,micro_fscore/validation/Defense Evasion,0.7542372941970825
+400,46,micro_fscore/validation/Defense Evasion,0.7542372941970825
+401,47,micro_fscore/validation/Defense Evasion,0.7542372941970825
+402,48,micro_fscore/validation/Defense Evasion,0.7542372941970825
+403,49,micro_fscore/validation/Defense Evasion,0.7542372941970825
+404,0,micro_fscore/validation/Discovery,0.8216080665588379
+405,1,micro_fscore/validation/Discovery,0.8238028883934021
+406,2,micro_fscore/validation/Discovery,0.8603495359420776
+407,3,micro_fscore/validation/Discovery,0.8849677443504333
+408,4,micro_fscore/validation/Discovery,0.9015238285064697
+409,5,micro_fscore/validation/Discovery,0.9277952909469604
+410,6,micro_fscore/validation/Discovery,0.9452242255210876
+411,7,micro_fscore/validation/Discovery,0.9569665193557739
+412,8,micro_fscore/validation/Discovery,0.9550835490226746
+413,9,micro_fscore/validation/Discovery,0.959391713142395
+414,10,micro_fscore/validation/Discovery,0.9662522077560425
+415,11,micro_fscore/validation/Discovery,0.962224543094635
+416,12,micro_fscore/validation/Discovery,0.9657570123672485
+417,13,micro_fscore/validation/Discovery,0.9727367758750916
+418,14,micro_fscore/validation/Discovery,0.9687122106552124
+419,15,micro_fscore/validation/Discovery,0.9772409200668335
+420,16,micro_fscore/validation/Discovery,0.9726908802986145
+421,17,micro_fscore/validation/Discovery,0.9712192416191101
+422,18,micro_fscore/validation/Discovery,0.9712179899215698
+423,19,micro_fscore/validation/Discovery,0.9707214832305908
+424,20,micro_fscore/validation/Discovery,0.9711977243423462
+425,21,micro_fscore/validation/Discovery,0.9684174060821533
+426,22,micro_fscore/validation/Discovery,0.9698132872581482
+427,23,micro_fscore/validation/Discovery,0.967267632484436
+428,24,micro_fscore/validation/Discovery,0.9633851647377014
+429,25,micro_fscore/validation/Discovery,0.9734042286872864
+430,26,micro_fscore/validation/Discovery,0.9706293940544128
+431,27,micro_fscore/validation/Discovery,0.9708194732666016
+432,28,micro_fscore/validation/Discovery,0.9711991548538208
+433,29,micro_fscore/validation/Discovery,0.9715085029602051
+434,30,micro_fscore/validation/Discovery,0.9717079997062683
+435,31,micro_fscore/validation/Discovery,0.9715383052825928
+436,32,micro_fscore/validation/Discovery,0.9717079997062683
+437,33,micro_fscore/validation/Discovery,0.9717079997062683
+438,34,micro_fscore/validation/Discovery,0.9718777537345886
+439,35,micro_fscore/validation/Discovery,0.9717079997062683
+440,36,micro_fscore/validation/Discovery,0.9717079997062683
+441,37,micro_fscore/validation/Discovery,0.9715383052825928
+442,38,micro_fscore/validation/Discovery,0.9715383052825928
+443,39,micro_fscore/validation/Discovery,0.9715383052825928
+444,40,micro_fscore/validation/Discovery,0.9715383052825928
+445,41,micro_fscore/validation/Discovery,0.9715383052825928
+446,42,micro_fscore/validation/Discovery,0.9713786840438843
+447,43,micro_fscore/validation/Discovery,0.9711991548538208
+448,44,micro_fscore/validation/Discovery,0.9711991548538208
+449,45,micro_fscore/validation/Discovery,0.9711991548538208
+450,46,micro_fscore/validation/Discovery,0.9711991548538208
+451,47,micro_fscore/validation/Discovery,0.9711991548538208
+452,48,micro_fscore/validation/Discovery,0.9711991548538208
+453,49,micro_fscore/validation/Discovery,0.9711991548538208
+454,0,micro_fscore/validation/Execution,0.6618579030036926
+455,1,micro_fscore/validation/Execution,0.7319788336753845
+456,2,micro_fscore/validation/Execution,0.7545045018196106
+457,3,micro_fscore/validation/Execution,0.7600318789482117
+458,4,micro_fscore/validation/Execution,0.7851935029029846
+459,5,micro_fscore/validation/Execution,0.7870519161224365
+460,6,micro_fscore/validation/Execution,0.8062797784805298
+461,7,micro_fscore/validation/Execution,0.8088961839675903
+462,8,micro_fscore/validation/Execution,0.8030303120613098
+463,9,micro_fscore/validation/Execution,0.8051649928092957
+464,10,micro_fscore/validation/Execution,0.8044968247413635
+465,11,micro_fscore/validation/Execution,0.8043354153633118
+466,12,micro_fscore/validation/Execution,0.8004627227783203
+467,13,micro_fscore/validation/Execution,0.8083544969558716
+468,14,micro_fscore/validation/Execution,0.8065173029899597
+469,15,micro_fscore/validation/Execution,0.8357163667678833
+470,16,micro_fscore/validation/Execution,0.8207077980041504
+471,17,micro_fscore/validation/Execution,0.8318849205970764
+472,18,micro_fscore/validation/Execution,0.8347305655479431
+473,19,micro_fscore/validation/Execution,0.8340399861335754
+474,20,micro_fscore/validation/Execution,0.8399999737739563
+475,21,micro_fscore/validation/Execution,0.8294456005096436
+476,22,micro_fscore/validation/Execution,0.8342440724372864
+477,23,micro_fscore/validation/Execution,0.8290030360221863
+478,24,micro_fscore/validation/Execution,0.8190768957138062
+479,25,micro_fscore/validation/Execution,0.839564323425293
+480,26,micro_fscore/validation/Execution,0.8282888531684875
+481,27,micro_fscore/validation/Execution,0.8272972106933594
+482,28,micro_fscore/validation/Execution,0.827792763710022
+483,29,micro_fscore/validation/Execution,0.8290495872497559
+484,30,micro_fscore/validation/Execution,0.8288019299507141
+485,31,micro_fscore/validation/Execution,0.8289473652839661
+486,32,micro_fscore/validation/Execution,0.82869952917099
+487,33,micro_fscore/validation/Execution,0.8288019299507141
+488,34,micro_fscore/validation/Execution,0.8291517496109009
+489,35,micro_fscore/validation/Execution,0.8288019299507141
+490,36,micro_fscore/validation/Execution,0.8288019299507141
+491,37,micro_fscore/validation/Execution,0.8290495872497559
+492,38,micro_fscore/validation/Execution,0.8292974829673767
+493,39,micro_fscore/validation/Execution,0.8292974829673767
+494,40,micro_fscore/validation/Execution,0.8292974829673767
+495,41,micro_fscore/validation/Execution,0.8290495872497559
+496,42,micro_fscore/validation/Execution,0.8291953206062317
+497,43,micro_fscore/validation/Execution,0.8291953206062317
+498,44,micro_fscore/validation/Execution,0.8289473652839661
+499,45,micro_fscore/validation/Execution,0.8291953206062317
+500,46,micro_fscore/validation/Execution,0.8291953206062317
+501,47,micro_fscore/validation/Execution,0.8291953206062317
+502,48,micro_fscore/validation/Execution,0.8291953206062317
+503,49,micro_fscore/validation/Execution,0.8291953206062317
+504,0,micro_fscore/validation/Harmless,0.0
+505,1,micro_fscore/validation/Harmless,0.0
+506,2,micro_fscore/validation/Harmless,0.004338394850492477
+507,3,micro_fscore/validation/Harmless,0.0043290043249726295
+508,4,micro_fscore/validation/Harmless,0.008528784848749638
+509,5,micro_fscore/validation/Harmless,0.012738853693008423
+510,6,micro_fscore/validation/Harmless,0.012793176807463169
+511,7,micro_fscore/validation/Harmless,0.06692913174629211
+512,8,micro_fscore/validation/Harmless,0.058139536529779434
+513,9,micro_fscore/validation/Harmless,0.10488245636224747
+514,10,micro_fscore/validation/Harmless,0.10469313710927963
+515,11,micro_fscore/validation/Harmless,0.1008695662021637
+516,12,micro_fscore/validation/Harmless,0.09797297418117523
+517,13,micro_fscore/validation/Harmless,0.09948541969060898
+518,14,micro_fscore/validation/Harmless,0.09813874959945679
+519,15,micro_fscore/validation/Harmless,0.1006944477558136
+520,16,micro_fscore/validation/Harmless,0.10051993280649185
+521,17,micro_fscore/validation/Harmless,0.1006944477558136
+522,18,micro_fscore/validation/Harmless,0.10362694412469864
+523,19,micro_fscore/validation/Harmless,0.13265305757522583
+524,20,micro_fscore/validation/Harmless,0.157119482755661
+525,21,micro_fscore/validation/Harmless,0.15181517601013184
+526,22,micro_fscore/validation/Harmless,0.15745393931865692
+527,23,micro_fscore/validation/Harmless,0.15771812200546265
+528,24,micro_fscore/validation/Harmless,0.1678321659564972
+529,25,micro_fscore/validation/Harmless,0.1609589010477066
+530,26,micro_fscore/validation/Harmless,0.16262975335121155
+531,27,micro_fscore/validation/Harmless,0.1623488813638687
+532,28,micro_fscore/validation/Harmless,0.16206896305084229
+533,29,micro_fscore/validation/Harmless,0.16262975335121155
+534,30,micro_fscore/validation/Harmless,0.1623488813638687
+535,31,micro_fscore/validation/Harmless,0.1623488813638687
+536,32,micro_fscore/validation/Harmless,0.1623488813638687
+537,33,micro_fscore/validation/Harmless,0.1623488813638687
+538,34,micro_fscore/validation/Harmless,0.1623488813638687
+539,35,micro_fscore/validation/Harmless,0.1623488813638687
+540,36,micro_fscore/validation/Harmless,0.16262975335121155
+541,37,micro_fscore/validation/Harmless,0.16262975335121155
+542,38,micro_fscore/validation/Harmless,0.16262975335121155
+543,39,micro_fscore/validation/Harmless,0.16262975335121155
+544,40,micro_fscore/validation/Harmless,0.16262975335121155
+545,41,micro_fscore/validation/Harmless,0.16262975335121155
+546,42,micro_fscore/validation/Harmless,0.16262975335121155
+547,43,micro_fscore/validation/Harmless,0.16291160881519318
+548,44,micro_fscore/validation/Harmless,0.16291160881519318
+549,45,micro_fscore/validation/Harmless,0.16291160881519318
+550,46,micro_fscore/validation/Harmless,0.16291160881519318
+551,47,micro_fscore/validation/Harmless,0.16291160881519318
+552,48,micro_fscore/validation/Harmless,0.16291160881519318
+553,49,micro_fscore/validation/Harmless,0.16291160881519318
+554,0,micro_fscore/validation/Impact,0.0
+555,1,micro_fscore/validation/Impact,0.0
+556,2,micro_fscore/validation/Impact,0.0
+557,3,micro_fscore/validation/Impact,0.0
+558,4,micro_fscore/validation/Impact,0.0
+559,5,micro_fscore/validation/Impact,0.0
+560,6,micro_fscore/validation/Impact,0.0
+561,7,micro_fscore/validation/Impact,0.0
+562,8,micro_fscore/validation/Impact,0.0
+563,9,micro_fscore/validation/Impact,0.0
+564,10,micro_fscore/validation/Impact,0.0
+565,11,micro_fscore/validation/Impact,0.0
+566,12,micro_fscore/validation/Impact,0.0
+567,13,micro_fscore/validation/Impact,0.0
+568,14,micro_fscore/validation/Impact,0.11999999731779099
+569,15,micro_fscore/validation/Impact,0.19607843458652496
+570,16,micro_fscore/validation/Impact,0.20000000298023224
+571,17,micro_fscore/validation/Impact,0.16326530277729034
+572,18,micro_fscore/validation/Impact,0.29629629850387573
+573,19,micro_fscore/validation/Impact,0.08510638028383255
+574,20,micro_fscore/validation/Impact,0.3214285671710968
+575,21,micro_fscore/validation/Impact,0.29629629850387573
+576,22,micro_fscore/validation/Impact,0.26923078298568726
+577,23,micro_fscore/validation/Impact,0.23076923191547394
+578,24,micro_fscore/validation/Impact,0.26923078298568726
+579,25,micro_fscore/validation/Impact,0.29629629850387573
+580,26,micro_fscore/validation/Impact,0.26923078298568726
+581,27,micro_fscore/validation/Impact,0.26923078298568726
+582,28,micro_fscore/validation/Impact,0.26923078298568726
+583,29,micro_fscore/validation/Impact,0.26923078298568726
+584,30,micro_fscore/validation/Impact,0.20000000298023224
+585,31,micro_fscore/validation/Impact,0.20000000298023224
+586,32,micro_fscore/validation/Impact,0.20000000298023224
+587,33,micro_fscore/validation/Impact,0.20000000298023224
+588,34,micro_fscore/validation/Impact,0.20000000298023224
+589,35,micro_fscore/validation/Impact,0.20000000298023224
+590,36,micro_fscore/validation/Impact,0.20000000298023224
+591,37,micro_fscore/validation/Impact,0.20000000298023224
+592,38,micro_fscore/validation/Impact,0.20000000298023224
+593,39,micro_fscore/validation/Impact,0.20000000298023224
+594,40,micro_fscore/validation/Impact,0.20000000298023224
+595,41,micro_fscore/validation/Impact,0.20000000298023224
+596,42,micro_fscore/validation/Impact,0.20000000298023224
+597,43,micro_fscore/validation/Impact,0.20000000298023224
+598,44,micro_fscore/validation/Impact,0.20000000298023224
+599,45,micro_fscore/validation/Impact,0.20000000298023224
+600,46,micro_fscore/validation/Impact,0.20000000298023224
+601,47,micro_fscore/validation/Impact,0.20000000298023224
+602,48,micro_fscore/validation/Impact,0.20000000298023224
+603,49,micro_fscore/validation/Impact,0.20000000298023224
+604,0,micro_fscore/validation/Other,0.0
+605,1,micro_fscore/validation/Other,0.0
+606,2,micro_fscore/validation/Other,0.0
+607,3,micro_fscore/validation/Other,0.0
+608,4,micro_fscore/validation/Other,0.05263157933950424
+609,5,micro_fscore/validation/Other,0.07792207598686218
+610,6,micro_fscore/validation/Other,0.05263157933950424
+611,7,micro_fscore/validation/Other,0.07594936341047287
+612,8,micro_fscore/validation/Other,0.05263157933950424
+613,9,micro_fscore/validation/Other,0.15000000596046448
+614,10,micro_fscore/validation/Other,0.0533333346247673
+615,11,micro_fscore/validation/Other,0.3777777850627899
+616,12,micro_fscore/validation/Other,0.4791666567325592
+617,13,micro_fscore/validation/Other,0.3956044018268585
+618,14,micro_fscore/validation/Other,0.582524299621582
+619,15,micro_fscore/validation/Other,0.9264705777168274
+620,16,micro_fscore/validation/Other,0.8503937125205994
+621,17,micro_fscore/validation/Other,0.9420289993286133
+622,18,micro_fscore/validation/Other,0.9571428298950195
+623,19,micro_fscore/validation/Other,0.9718309640884399
+624,20,micro_fscore/validation/Other,0.9387755393981934
+625,21,micro_fscore/validation/Other,0.9718309640884399
+626,22,micro_fscore/validation/Other,0.9718309640884399
+627,23,micro_fscore/validation/Other,0.9718309640884399
+628,24,micro_fscore/validation/Other,0.9102563858032227
+629,25,micro_fscore/validation/Other,0.9930070042610168
+630,26,micro_fscore/validation/Other,0.9930070042610168
+631,27,micro_fscore/validation/Other,0.98591548204422
+632,28,micro_fscore/validation/Other,0.98591548204422
+633,29,micro_fscore/validation/Other,0.9930070042610168
+634,30,micro_fscore/validation/Other,0.98591548204422
+635,31,micro_fscore/validation/Other,0.98591548204422
+636,32,micro_fscore/validation/Other,0.98591548204422
+637,33,micro_fscore/validation/Other,0.98591548204422
+638,34,micro_fscore/validation/Other,0.98591548204422
+639,35,micro_fscore/validation/Other,0.98591548204422
+640,36,micro_fscore/validation/Other,0.98591548204422
+641,37,micro_fscore/validation/Other,0.98591548204422
+642,38,micro_fscore/validation/Other,0.98591548204422
+643,39,micro_fscore/validation/Other,0.98591548204422
+644,40,micro_fscore/validation/Other,0.98591548204422
+645,41,micro_fscore/validation/Other,0.98591548204422
+646,42,micro_fscore/validation/Other,0.98591548204422
+647,43,micro_fscore/validation/Other,0.98591548204422
+648,44,micro_fscore/validation/Other,0.98591548204422
+649,45,micro_fscore/validation/Other,0.98591548204422
+650,46,micro_fscore/validation/Other,0.98591548204422
+651,47,micro_fscore/validation/Other,0.98591548204422
+652,48,micro_fscore/validation/Other,0.98591548204422
+653,49,micro_fscore/validation/Other,0.98591548204422
+654,0,micro_fscore/validation/Persistence,0.0
+655,1,micro_fscore/validation/Persistence,0.2320987582206726
+656,2,micro_fscore/validation/Persistence,0.598499059677124
+657,3,micro_fscore/validation/Persistence,0.6906354427337646
+658,4,micro_fscore/validation/Persistence,0.7240204215049744
+659,5,micro_fscore/validation/Persistence,0.84670490026474
+660,6,micro_fscore/validation/Persistence,0.8946266770362854
+661,7,micro_fscore/validation/Persistence,0.9228705763816833
+662,8,micro_fscore/validation/Persistence,0.9281396865844727
+663,9,micro_fscore/validation/Persistence,0.9364864826202393
+664,10,micro_fscore/validation/Persistence,0.9528301954269409
+665,11,micro_fscore/validation/Persistence,0.9439252614974976
+666,12,micro_fscore/validation/Persistence,0.960597813129425
+667,13,micro_fscore/validation/Persistence,0.9708737730979919
+668,14,micro_fscore/validation/Persistence,0.9700348377227783
+669,15,micro_fscore/validation/Persistence,0.9738292098045349
+670,16,micro_fscore/validation/Persistence,0.9750692248344421
+671,17,micro_fscore/validation/Persistence,0.9718213081359863
+672,18,micro_fscore/validation/Persistence,0.9651877284049988
+673,19,micro_fscore/validation/Persistence,0.9826026558876038
+674,20,micro_fscore/validation/Persistence,0.9791377186775208
+675,21,micro_fscore/validation/Persistence,0.980555534362793
+676,22,micro_fscore/validation/Persistence,0.9825783967971802
+677,23,micro_fscore/validation/Persistence,0.968406617641449
+678,24,micro_fscore/validation/Persistence,0.9618528485298157
+679,25,micro_fscore/validation/Persistence,0.9552845358848572
+680,26,micro_fscore/validation/Persistence,0.968406617641449
+681,27,micro_fscore/validation/Persistence,0.9704060554504395
+682,28,micro_fscore/validation/Persistence,0.9724137783050537
+683,29,micro_fscore/validation/Persistence,0.9697386622428894
+684,30,micro_fscore/validation/Persistence,0.9731220006942749
+685,31,micro_fscore/validation/Persistence,0.9731220006942749
+686,32,micro_fscore/validation/Persistence,0.9731220006942749
+687,33,micro_fscore/validation/Persistence,0.9731220006942749
+688,34,micro_fscore/validation/Persistence,0.9731220006942749
+689,35,micro_fscore/validation/Persistence,0.9731220006942749
+690,36,micro_fscore/validation/Persistence,0.9724518060684204
+691,37,micro_fscore/validation/Persistence,0.9724518060684204
+692,38,micro_fscore/validation/Persistence,0.9724518060684204
+693,39,micro_fscore/validation/Persistence,0.9724518060684204
+694,40,micro_fscore/validation/Persistence,0.9724518060684204
+695,41,micro_fscore/validation/Persistence,0.9724518060684204
+696,42,micro_fscore/validation/Persistence,0.9731220006942749
+697,43,micro_fscore/validation/Persistence,0.9717825055122375
+698,44,micro_fscore/validation/Persistence,0.9717825055122375
+699,45,micro_fscore/validation/Persistence,0.9717825055122375
+700,46,micro_fscore/validation/Persistence,0.9717825055122375
+701,47,micro_fscore/validation/Persistence,0.9717825055122375
+702,48,micro_fscore/validation/Persistence,0.9717825055122375
+703,49,micro_fscore/validation/Persistence,0.9717825055122375
+704,0,micro_precision/validation/Defense Evasion,0.0
+705,1,micro_precision/validation/Defense Evasion,0.0
+706,2,micro_precision/validation/Defense Evasion,0.0
+707,3,micro_precision/validation/Defense Evasion,0.0
+708,4,micro_precision/validation/Defense Evasion,0.0
+709,5,micro_precision/validation/Defense Evasion,0.0
+710,6,micro_precision/validation/Defense Evasion,0.0
+711,7,micro_precision/validation/Defense Evasion,0.0
+712,8,micro_precision/validation/Defense Evasion,0.0
+713,9,micro_precision/validation/Defense Evasion,0.0
+714,10,micro_precision/validation/Defense Evasion,0.0
+715,11,micro_precision/validation/Defense Evasion,0.3333333432674408
+716,12,micro_precision/validation/Defense Evasion,0.7368420958518982
+717,13,micro_precision/validation/Defense Evasion,0.6666666865348816
+718,14,micro_precision/validation/Defense Evasion,0.7647058963775635
+719,15,micro_precision/validation/Defense Evasion,0.604938268661499
+720,16,micro_precision/validation/Defense Evasion,0.7536231875419617
+721,17,micro_precision/validation/Defense Evasion,0.5102040767669678
+722,18,micro_precision/validation/Defense Evasion,0.5094339847564697
+723,19,micro_precision/validation/Defense Evasion,0.4751381278038025
+724,20,micro_precision/validation/Defense Evasion,0.47089946269989014
+725,21,micro_precision/validation/Defense Evasion,0.5527950525283813
+726,22,micro_precision/validation/Defense Evasion,0.47826087474823
+727,23,micro_precision/validation/Defense Evasion,0.5361445546150208
+728,24,micro_precision/validation/Defense Evasion,0.6054421663284302
+729,25,micro_precision/validation/Defense Evasion,0.631205677986145
+730,26,micro_precision/validation/Defense Evasion,0.5973154306411743
+731,27,micro_precision/validation/Defense Evasion,0.6137930750846863
+732,28,micro_precision/validation/Defense Evasion,0.6223776340484619
+733,29,micro_precision/validation/Defense Evasion,0.631205677986145
+734,30,micro_precision/validation/Defense Evasion,0.6357142925262451
+735,31,micro_precision/validation/Defense Evasion,0.6267605423927307
+736,32,micro_precision/validation/Defense Evasion,0.6267605423927307
+737,33,micro_precision/validation/Defense Evasion,0.6357142925262451
+738,34,micro_precision/validation/Defense Evasion,0.6357142925262451
+739,35,micro_precision/validation/Defense Evasion,0.6357142925262451
+740,36,micro_precision/validation/Defense Evasion,0.6357142925262451
+741,37,micro_precision/validation/Defense Evasion,0.6357142925262451
+742,38,micro_precision/validation/Defense Evasion,0.631205677986145
+743,39,micro_precision/validation/Defense Evasion,0.631205677986145
+744,40,micro_precision/validation/Defense Evasion,0.631205677986145
+745,41,micro_precision/validation/Defense Evasion,0.6357142925262451
+746,42,micro_precision/validation/Defense Evasion,0.631205677986145
+747,43,micro_precision/validation/Defense Evasion,0.631205677986145
+748,44,micro_precision/validation/Defense Evasion,0.6357142925262451
+749,45,micro_precision/validation/Defense Evasion,0.631205677986145
+750,46,micro_precision/validation/Defense Evasion,0.631205677986145
+751,47,micro_precision/validation/Defense Evasion,0.631205677986145
+752,48,micro_precision/validation/Defense Evasion,0.631205677986145
+753,49,micro_precision/validation/Defense Evasion,0.631205677986145
+754,0,micro_precision/validation/Discovery,0.8338797688484192
+755,1,micro_precision/validation/Discovery,0.733039140701294
+756,2,micro_precision/validation/Discovery,0.7868035435676575
+757,3,micro_precision/validation/Discovery,0.850342333316803
+758,4,micro_precision/validation/Discovery,0.8397436141967773
+759,5,micro_precision/validation/Discovery,0.9194164872169495
+760,6,micro_precision/validation/Discovery,0.9157545566558838
+761,7,micro_precision/validation/Discovery,0.9542736411094666
+762,8,micro_precision/validation/Discovery,0.9403496980667114
+763,9,micro_precision/validation/Discovery,0.9378378391265869
+764,10,micro_precision/validation/Discovery,0.9703888893127441
+765,11,micro_precision/validation/Discovery,0.9515738487243652
+766,12,micro_precision/validation/Discovery,0.9494190216064453
+767,13,micro_precision/validation/Discovery,0.9613125920295715
+768,14,micro_precision/validation/Discovery,0.9472616910934448
+769,15,micro_precision/validation/Discovery,0.9674176573753357
+770,16,micro_precision/validation/Discovery,0.9568788409233093
+771,17,micro_precision/validation/Discovery,0.958017885684967
+772,18,micro_precision/validation/Discovery,0.9637756943702698
+773,19,micro_precision/validation/Discovery,0.9567158818244934
+774,20,micro_precision/validation/Discovery,0.9644227623939514
+775,21,micro_precision/validation/Discovery,0.9555785059928894
+776,22,micro_precision/validation/Discovery,0.9569559097290039
+777,23,micro_precision/validation/Discovery,0.957380473613739
+778,24,micro_precision/validation/Discovery,0.9412757158279419
+779,25,micro_precision/validation/Discovery,0.9758265018463135
+780,26,micro_precision/validation/Discovery,0.9595575332641602
+781,27,micro_precision/validation/Discovery,0.9592541456222534
+782,28,micro_precision/validation/Discovery,0.958649218082428
+783,29,micro_precision/validation/Discovery,0.9602625966072083
+784,30,micro_precision/validation/Discovery,0.9596412777900696
+785,31,micro_precision/validation/Discovery,0.9593103528022766
+786,32,micro_precision/validation/Discovery,0.9596412777900696
+787,33,micro_precision/validation/Discovery,0.9596412777900696
+788,34,micro_precision/validation/Discovery,0.9599723815917969
+789,35,micro_precision/validation/Discovery,0.9596412777900696
+790,36,micro_precision/validation/Discovery,0.9596412777900696
+791,37,micro_precision/validation/Discovery,0.9593103528022766
+792,38,micro_precision/validation/Discovery,0.9593103528022766
+793,39,micro_precision/validation/Discovery,0.9593103528022766
+794,40,micro_precision/validation/Discovery,0.9593103528022766
+795,41,micro_precision/validation/Discovery,0.9593103528022766
+796,42,micro_precision/validation/Discovery,0.9586634635925293
+797,43,micro_precision/validation/Discovery,0.958649218082428
+798,44,micro_precision/validation/Discovery,0.958649218082428
+799,45,micro_precision/validation/Discovery,0.958649218082428
+800,46,micro_precision/validation/Discovery,0.958649218082428
+801,47,micro_precision/validation/Discovery,0.958649218082428
+802,48,micro_precision/validation/Discovery,0.958649218082428
+803,49,micro_precision/validation/Discovery,0.958649218082428
+804,0,micro_precision/validation/Execution,0.5018230080604553
+805,1,micro_precision/validation/Execution,0.6461916565895081
+806,2,micro_precision/validation/Execution,0.6720160245895386
+807,3,micro_precision/validation/Execution,0.6485260725021362
+808,4,micro_precision/validation/Execution,0.6972111463546753
+809,5,micro_precision/validation/Execution,0.6747706532478333
+810,6,micro_precision/validation/Execution,0.7157790064811707
+811,7,micro_precision/validation/Execution,0.7068138122558594
+812,8,micro_precision/validation/Execution,0.7133598923683167
+813,9,micro_precision/validation/Execution,0.7280747294425964
+814,10,micro_precision/validation/Execution,0.7022498846054077
+815,11,micro_precision/validation/Execution,0.7238193154335022
+816,12,micro_precision/validation/Execution,0.7284210324287415
+817,13,micro_precision/validation/Execution,0.7214105725288391
+818,14,micro_precision/validation/Execution,0.7376263737678528
+819,15,micro_precision/validation/Execution,0.7661851048469543
+820,16,micro_precision/validation/Execution,0.7538957595825195
+821,17,micro_precision/validation/Execution,0.7802135944366455
+822,18,micro_precision/validation/Execution,0.7822670936584473
+823,19,micro_precision/validation/Execution,0.7895641922950745
+824,20,micro_precision/validation/Execution,0.7956371903419495
+825,21,micro_precision/validation/Execution,0.785427451133728
+826,22,micro_precision/validation/Execution,0.7914746403694153
+827,23,micro_precision/validation/Execution,0.7831050157546997
+828,24,micro_precision/validation/Execution,0.7866430282592773
+829,25,micro_precision/validation/Execution,0.7754214406013489
+830,26,micro_precision/validation/Execution,0.7768409252166748
+831,27,micro_precision/validation/Execution,0.7750981450080872
+832,28,micro_precision/validation/Execution,0.7759685516357422
+833,29,micro_precision/validation/Execution,0.7757270932197571
+834,30,micro_precision/validation/Execution,0.7752934694290161
+835,31,micro_precision/validation/Execution,0.7760358452796936
+836,32,micro_precision/validation/Execution,0.7756015658378601
+837,33,micro_precision/validation/Execution,0.7752934694290161
+838,34,micro_precision/validation/Execution,0.7754189968109131
+839,35,micro_precision/validation/Execution,0.7752934694290161
+840,36,micro_precision/validation/Execution,0.7752934694290161
+841,37,micro_precision/validation/Execution,0.7757270932197571
+842,38,micro_precision/validation/Execution,0.7761611342430115
+843,39,micro_precision/validation/Execution,0.7761611342430115
+844,40,micro_precision/validation/Execution,0.7761611342430115
+845,41,micro_precision/validation/Execution,0.7757270932197571
+846,42,micro_precision/validation/Execution,0.7764706015586853
+847,43,micro_precision/validation/Execution,0.7764706015586853
+848,44,micro_precision/validation/Execution,0.7760358452796936
+849,45,micro_precision/validation/Execution,0.7764706015586853
+850,46,micro_precision/validation/Execution,0.7764706015586853
+851,47,micro_precision/validation/Execution,0.7764706015586853
+852,48,micro_precision/validation/Execution,0.7764706015586853
+853,49,micro_precision/validation/Execution,0.7764706015586853
+854,0,micro_precision/validation/Harmless,0.0
+855,1,micro_precision/validation/Harmless,0.0
+856,2,micro_precision/validation/Harmless,1.0
+857,3,micro_precision/validation/Harmless,0.5
+858,4,micro_precision/validation/Harmless,0.2222222238779068
+859,5,micro_precision/validation/Harmless,0.27272728085517883
+860,6,micro_precision/validation/Harmless,0.3333333432674408
+861,7,micro_precision/validation/Harmless,0.3541666567325592
+862,8,micro_precision/validation/Harmless,0.2678571343421936
+863,9,micro_precision/validation/Harmless,0.31182795763015747
+864,10,micro_precision/validation/Harmless,0.3085106313228607
+865,11,micro_precision/validation/Harmless,0.25217390060424805
+866,12,micro_precision/validation/Harmless,0.21969696879386902
+867,13,micro_precision/validation/Harmless,0.23577235639095306
+868,14,micro_precision/validation/Harmless,0.221374049782753
+869,15,micro_precision/validation/Harmless,0.25
+870,16,micro_precision/validation/Harmless,0.24786324799060822
+871,17,micro_precision/validation/Harmless,0.25
+872,18,micro_precision/validation/Harmless,0.2521008551120758
+873,19,micro_precision/validation/Harmless,0.3046875
+874,20,micro_precision/validation/Harmless,0.3178808093070984
+875,21,micro_precision/validation/Harmless,0.31506848335266113
+876,22,micro_precision/validation/Harmless,0.34306567907333374
+877,23,micro_precision/validation/Harmless,0.34558823704719543
+878,24,micro_precision/validation/Harmless,0.4285714328289032
+879,25,micro_precision/validation/Harmless,0.3790322542190552
+880,26,micro_precision/validation/Harmless,0.39830508828163147
+881,27,micro_precision/validation/Harmless,0.3949579894542694
+882,28,micro_precision/validation/Harmless,0.3916666805744171
+883,29,micro_precision/validation/Harmless,0.39830508828163147
+884,30,micro_precision/validation/Harmless,0.3949579894542694
+885,31,micro_precision/validation/Harmless,0.3949579894542694
+886,32,micro_precision/validation/Harmless,0.3949579894542694
+887,33,micro_precision/validation/Harmless,0.3949579894542694
+888,34,micro_precision/validation/Harmless,0.3949579894542694
+889,35,micro_precision/validation/Harmless,0.3949579894542694
+890,36,micro_precision/validation/Harmless,0.39830508828163147
+891,37,micro_precision/validation/Harmless,0.39830508828163147
+892,38,micro_precision/validation/Harmless,0.39830508828163147
+893,39,micro_precision/validation/Harmless,0.39830508828163147
+894,40,micro_precision/validation/Harmless,0.39830508828163147
+895,41,micro_precision/validation/Harmless,0.39830508828163147
+896,42,micro_precision/validation/Harmless,0.39830508828163147
+897,43,micro_precision/validation/Harmless,0.4017094075679779
+898,44,micro_precision/validation/Harmless,0.4017094075679779
+899,45,micro_precision/validation/Harmless,0.4017094075679779
+900,46,micro_precision/validation/Harmless,0.4017094075679779
+901,47,micro_precision/validation/Harmless,0.4017094075679779
+902,48,micro_precision/validation/Harmless,0.4017094075679779
+903,49,micro_precision/validation/Harmless,0.4017094075679779
+904,0,micro_precision/validation/Impact,0.0
+905,1,micro_precision/validation/Impact,0.0
+906,2,micro_precision/validation/Impact,0.0
+907,3,micro_precision/validation/Impact,0.0
+908,4,micro_precision/validation/Impact,0.0
+909,5,micro_precision/validation/Impact,0.0
+910,6,micro_precision/validation/Impact,0.0
+911,7,micro_precision/validation/Impact,0.0
+912,8,micro_precision/validation/Impact,0.0
+913,9,micro_precision/validation/Impact,0.0
+914,10,micro_precision/validation/Impact,0.0
+915,11,micro_precision/validation/Impact,0.0
+916,12,micro_precision/validation/Impact,0.0
+917,13,micro_precision/validation/Impact,0.0
+918,14,micro_precision/validation/Impact,0.6000000238418579
+919,15,micro_precision/validation/Impact,0.8333333134651184
+920,16,micro_precision/validation/Impact,1.0
+921,17,micro_precision/validation/Impact,1.0
+922,18,micro_precision/validation/Impact,0.8888888955116272
+923,19,micro_precision/validation/Impact,1.0
+924,20,micro_precision/validation/Impact,0.8181818127632141
+925,21,micro_precision/validation/Impact,0.8888888955116272
+926,22,micro_precision/validation/Impact,1.0
+927,23,micro_precision/validation/Impact,0.8571428656578064
+928,24,micro_precision/validation/Impact,1.0
+929,25,micro_precision/validation/Impact,0.8888888955116272
+930,26,micro_precision/validation/Impact,1.0
+931,27,micro_precision/validation/Impact,1.0
+932,28,micro_precision/validation/Impact,1.0
+933,29,micro_precision/validation/Impact,1.0
+934,30,micro_precision/validation/Impact,1.0
+935,31,micro_precision/validation/Impact,1.0
+936,32,micro_precision/validation/Impact,1.0
+937,33,micro_precision/validation/Impact,1.0
+938,34,micro_precision/validation/Impact,1.0
+939,35,micro_precision/validation/Impact,1.0
+940,36,micro_precision/validation/Impact,1.0
+941,37,micro_precision/validation/Impact,1.0
+942,38,micro_precision/validation/Impact,1.0
+943,39,micro_precision/validation/Impact,1.0
+944,40,micro_precision/validation/Impact,1.0
+945,41,micro_precision/validation/Impact,1.0
+946,42,micro_precision/validation/Impact,1.0
+947,43,micro_precision/validation/Impact,1.0
+948,44,micro_precision/validation/Impact,1.0
+949,45,micro_precision/validation/Impact,1.0
+950,46,micro_precision/validation/Impact,1.0
+951,47,micro_precision/validation/Impact,1.0
+952,48,micro_precision/validation/Impact,1.0
+953,49,micro_precision/validation/Impact,1.0
+954,0,micro_precision/validation/Other,0.0
+955,1,micro_precision/validation/Other,0.0
+956,2,micro_precision/validation/Other,0.0
+957,3,micro_precision/validation/Other,0.0
+958,4,micro_precision/validation/Other,0.4000000059604645
+959,5,micro_precision/validation/Other,0.5
+960,6,micro_precision/validation/Other,0.4000000059604645
+961,7,micro_precision/validation/Other,0.375
+962,8,micro_precision/validation/Other,0.4000000059604645
+963,9,micro_precision/validation/Other,0.6666666865348816
+964,10,micro_precision/validation/Other,0.5
+965,11,micro_precision/validation/Other,0.8947368264198303
+966,12,micro_precision/validation/Other,0.9200000166893005
+967,13,micro_precision/validation/Other,0.8999999761581421
+968,14,micro_precision/validation/Other,0.9375
+969,15,micro_precision/validation/Other,0.9692307710647583
+970,16,micro_precision/validation/Other,0.9642857313156128
+971,17,micro_precision/validation/Other,0.9701492786407471
+972,18,micro_precision/validation/Other,0.9710144996643066
+973,19,micro_precision/validation/Other,0.9718309640884399
+974,20,micro_precision/validation/Other,0.9078947305679321
+975,21,micro_precision/validation/Other,0.9718309640884399
+976,22,micro_precision/validation/Other,0.9718309640884399
+977,23,micro_precision/validation/Other,0.9718309640884399
+978,24,micro_precision/validation/Other,0.8352941274642944
+979,25,micro_precision/validation/Other,0.9861111044883728
+980,26,micro_precision/validation/Other,0.9861111044883728
+981,27,micro_precision/validation/Other,0.98591548204422
+982,28,micro_precision/validation/Other,0.98591548204422
+983,29,micro_precision/validation/Other,0.9861111044883728
+984,30,micro_precision/validation/Other,0.98591548204422
+985,31,micro_precision/validation/Other,0.98591548204422
+986,32,micro_precision/validation/Other,0.98591548204422
+987,33,micro_precision/validation/Other,0.98591548204422
+988,34,micro_precision/validation/Other,0.98591548204422
+989,35,micro_precision/validation/Other,0.98591548204422
+990,36,micro_precision/validation/Other,0.98591548204422
+991,37,micro_precision/validation/Other,0.98591548204422
+992,38,micro_precision/validation/Other,0.98591548204422
+993,39,micro_precision/validation/Other,0.98591548204422
+994,40,micro_precision/validation/Other,0.98591548204422
+995,41,micro_precision/validation/Other,0.98591548204422
+996,42,micro_precision/validation/Other,0.98591548204422
+997,43,micro_precision/validation/Other,0.98591548204422
+998,44,micro_precision/validation/Other,0.98591548204422
+999,45,micro_precision/validation/Other,0.98591548204422
+1000,46,micro_precision/validation/Other,0.98591548204422
+1001,47,micro_precision/validation/Other,0.98591548204422
+1002,48,micro_precision/validation/Other,0.98591548204422
+1003,49,micro_precision/validation/Other,0.98591548204422
+1004,0,micro_precision/validation/Persistence,0.0
+1005,1,micro_precision/validation/Persistence,0.9306930899620056
+1006,2,micro_precision/validation/Persistence,0.8935574293136597
+1007,3,micro_precision/validation/Persistence,0.8480492830276489
+1008,4,micro_precision/validation/Persistence,0.9139785170555115
+1009,5,micro_precision/validation/Persistence,0.8602620363235474
+1010,6,micro_precision/validation/Persistence,0.8853591084480286
+1011,7,micro_precision/validation/Persistence,0.8797953724861145
+1012,8,micro_precision/validation/Persistence,0.8858974575996399
+1013,9,micro_precision/validation/Persistence,0.8988326787948608
+1014,10,micro_precision/validation/Persistence,0.9122580885887146
+1015,11,micro_precision/validation/Persistence,0.8960709571838379
+1016,12,micro_precision/validation/Persistence,0.9266055226325989
+1017,13,micro_precision/validation/Persistence,0.9549795389175415
+1018,14,micro_precision/validation/Persistence,0.9586777091026306
+1019,15,micro_precision/validation/Persistence,0.9515478014945984
+1020,16,micro_precision/validation/Persistence,0.9578231573104858
+1021,17,micro_precision/validation/Persistence,0.9477211833000183
+1022,18,micro_precision/validation/Persistence,0.9351851940155029
+1023,19,micro_precision/validation/Persistence,0.9697802066802979
+1024,20,micro_precision/validation/Persistence,0.965706467628479
+1025,21,micro_precision/validation/Persistence,0.9658002853393555
+1026,22,micro_precision/validation/Persistence,0.9710744023323059
+1027,23,micro_precision/validation/Persistence,0.9437751173973083
+1028,24,micro_precision/validation/Persistence,0.9301712512969971
+1029,25,micro_precision/validation/Persistence,0.9191655516624451
+1030,26,micro_precision/validation/Persistence,0.9437751173973083
+1031,27,micro_precision/validation/Persistence,0.9475806355476379
+1032,28,micro_precision/validation/Persistence,0.9514170289039612
+1033,29,micro_precision/validation/Persistence,0.9463087320327759
+1034,30,micro_precision/validation/Persistence,0.9514824748039246
+1035,31,micro_precision/validation/Persistence,0.9514824748039246
+1036,32,micro_precision/validation/Persistence,0.9514824748039246
+1037,33,micro_precision/validation/Persistence,0.9514824748039246
+1038,34,micro_precision/validation/Persistence,0.9514824748039246
+1039,35,micro_precision/validation/Persistence,0.9514824748039246
+1040,36,micro_precision/validation/Persistence,0.9502018690109253
+1041,37,micro_precision/validation/Persistence,0.9502018690109253
+1042,38,micro_precision/validation/Persistence,0.9502018690109253
+1043,39,micro_precision/validation/Persistence,0.9502018690109253
+1044,40,micro_precision/validation/Persistence,0.9502018690109253
+1045,41,micro_precision/validation/Persistence,0.9502018690109253
+1046,42,micro_precision/validation/Persistence,0.9514824748039246
+1047,43,micro_precision/validation/Persistence,0.948924720287323
+1048,44,micro_precision/validation/Persistence,0.948924720287323
+1049,45,micro_precision/validation/Persistence,0.948924720287323
+1050,46,micro_precision/validation/Persistence,0.948924720287323
+1051,47,micro_precision/validation/Persistence,0.948924720287323
+1052,48,micro_precision/validation/Persistence,0.948924720287323
+1053,49,micro_precision/validation/Persistence,0.948924720287323
+1054,0,micro_recall/validation/Defense Evasion,0.0
+1055,1,micro_recall/validation/Defense Evasion,0.0
+1056,2,micro_recall/validation/Defense Evasion,0.0
+1057,3,micro_recall/validation/Defense Evasion,0.0
+1058,4,micro_recall/validation/Defense Evasion,0.0
+1059,5,micro_recall/validation/Defense Evasion,0.0
+1060,6,micro_recall/validation/Defense Evasion,0.0
+1061,7,micro_recall/validation/Defense Evasion,0.0
+1062,8,micro_recall/validation/Defense Evasion,0.0
+1063,9,micro_recall/validation/Defense Evasion,0.0
+1064,10,micro_recall/validation/Defense Evasion,0.0
+1065,11,micro_recall/validation/Defense Evasion,0.010526316240429878
+1066,12,micro_recall/validation/Defense Evasion,0.1473684161901474
+1067,13,micro_recall/validation/Defense Evasion,0.06315789371728897
+1068,14,micro_recall/validation/Defense Evasion,0.27368420362472534
+1069,15,micro_recall/validation/Defense Evasion,0.5157894492149353
+1070,16,micro_recall/validation/Defense Evasion,0.5473684072494507
+1071,17,micro_recall/validation/Defense Evasion,0.7894737124443054
+1072,18,micro_recall/validation/Defense Evasion,0.8526315689086914
+1073,19,micro_recall/validation/Defense Evasion,0.9052631855010986
+1074,20,micro_recall/validation/Defense Evasion,0.9368420839309692
+1075,21,micro_recall/validation/Defense Evasion,0.9368420839309692
+1076,22,micro_recall/validation/Defense Evasion,0.9263157844543457
+1077,23,micro_recall/validation/Defense Evasion,0.9368420839309692
+1078,24,micro_recall/validation/Defense Evasion,0.9368420839309692
+1079,25,micro_recall/validation/Defense Evasion,0.9368420839309692
+1080,26,micro_recall/validation/Defense Evasion,0.9368420839309692
+1081,27,micro_recall/validation/Defense Evasion,0.9368420839309692
+1082,28,micro_recall/validation/Defense Evasion,0.9368420839309692
+1083,29,micro_recall/validation/Defense Evasion,0.9368420839309692
+1084,30,micro_recall/validation/Defense Evasion,0.9368420839309692
+1085,31,micro_recall/validation/Defense Evasion,0.9368420839309692
+1086,32,micro_recall/validation/Defense Evasion,0.9368420839309692
+1087,33,micro_recall/validation/Defense Evasion,0.9368420839309692
+1088,34,micro_recall/validation/Defense Evasion,0.9368420839309692
+1089,35,micro_recall/validation/Defense Evasion,0.9368420839309692
+1090,36,micro_recall/validation/Defense Evasion,0.9368420839309692
+1091,37,micro_recall/validation/Defense Evasion,0.9368420839309692
+1092,38,micro_recall/validation/Defense Evasion,0.9368420839309692
+1093,39,micro_recall/validation/Defense Evasion,0.9368420839309692
+1094,40,micro_recall/validation/Defense Evasion,0.9368420839309692
+1095,41,micro_recall/validation/Defense Evasion,0.9368420839309692
+1096,42,micro_recall/validation/Defense Evasion,0.9368420839309692
+1097,43,micro_recall/validation/Defense Evasion,0.9368420839309692
+1098,44,micro_recall/validation/Defense Evasion,0.9368420839309692
+1099,45,micro_recall/validation/Defense Evasion,0.9368420839309692
+1100,46,micro_recall/validation/Defense Evasion,0.9368420839309692
+1101,47,micro_recall/validation/Defense Evasion,0.9368420839309692
+1102,48,micro_recall/validation/Defense Evasion,0.9368420839309692
+1103,49,micro_recall/validation/Defense Evasion,0.9368420839309692
+1104,0,micro_recall/validation/Discovery,0.8096922636032104
+1105,1,micro_recall/validation/Discovery,0.9402193427085876
+1106,2,micro_recall/validation/Discovery,0.9490625858306885
+1107,3,micro_recall/validation/Discovery,0.9225327372550964
+1108,4,micro_recall/validation/Discovery,0.973116397857666
+1109,5,micro_recall/validation/Discovery,0.9363282918930054
+1110,6,micro_recall/validation/Discovery,0.9766536951065063
+1111,7,micro_recall/validation/Discovery,0.9596745371818542
+1112,8,micro_recall/validation/Discovery,0.9702865481376648
+1113,9,micro_recall/validation/Discovery,0.9819597005844116
+1114,10,micro_recall/validation/Discovery,0.9621506929397583
+1115,11,micro_recall/validation/Discovery,0.973116397857666
+1116,12,micro_recall/validation/Discovery,0.9826671481132507
+1117,13,micro_recall/validation/Discovery,0.9844357967376709
+1118,14,micro_recall/validation/Discovery,0.9911566972732544
+1119,15,micro_recall/validation/Discovery,0.9872656464576721
+1120,16,micro_recall/validation/Discovery,0.9890342950820923
+1121,17,micro_recall/validation/Discovery,0.9847895503044128
+1122,18,micro_recall/validation/Discovery,0.9787760972976685
+1123,19,micro_recall/validation/Discovery,0.98514324426651
+1124,20,micro_recall/validation/Discovery,0.9780686497688293
+1125,21,micro_recall/validation/Discovery,0.9816059470176697
+1126,22,micro_recall/validation/Discovery,0.9830208420753479
+1127,23,micro_recall/validation/Discovery,0.9773611426353455
+1128,24,micro_recall/validation/Discovery,0.986558198928833
+1129,25,micro_recall/validation/Discovery,0.9709939956665039
+1130,26,micro_recall/validation/Discovery,0.9819597005844116
+1131,27,micro_recall/validation/Discovery,0.9826671481132507
+1132,28,micro_recall/validation/Discovery,0.984082043170929
+1133,29,micro_recall/validation/Discovery,0.9830208420753479
+1134,30,micro_recall/validation/Discovery,0.984082043170929
+1135,31,micro_recall/validation/Discovery,0.984082043170929
+1136,32,micro_recall/validation/Discovery,0.984082043170929
+1137,33,micro_recall/validation/Discovery,0.984082043170929
+1138,34,micro_recall/validation/Discovery,0.984082043170929
+1139,35,micro_recall/validation/Discovery,0.984082043170929
+1140,36,micro_recall/validation/Discovery,0.984082043170929
+1141,37,micro_recall/validation/Discovery,0.984082043170929
+1142,38,micro_recall/validation/Discovery,0.984082043170929
+1143,39,micro_recall/validation/Discovery,0.984082043170929
+1144,40,micro_recall/validation/Discovery,0.984082043170929
+1145,41,micro_recall/validation/Discovery,0.984082043170929
+1146,42,micro_recall/validation/Discovery,0.9844357967376709
+1147,43,micro_recall/validation/Discovery,0.984082043170929
+1148,44,micro_recall/validation/Discovery,0.984082043170929
+1149,45,micro_recall/validation/Discovery,0.984082043170929
+1150,46,micro_recall/validation/Discovery,0.984082043170929
+1151,47,micro_recall/validation/Discovery,0.984082043170929
+1152,48,micro_recall/validation/Discovery,0.984082043170929
+1153,49,micro_recall/validation/Discovery,0.984082043170929
+1154,0,micro_recall/validation/Execution,0.9717586636543274
+1155,1,micro_recall/validation/Execution,0.8440307974815369
+1156,2,micro_recall/validation/Execution,0.8600770235061646
+1157,3,micro_recall/validation/Execution,0.9178434014320374
+1158,4,micro_recall/validation/Execution,0.8985879421234131
+1159,5,micro_recall/validation/Execution,0.9441591501235962
+1160,6,micro_recall/validation/Execution,0.9229781627655029
+1161,7,micro_recall/validation/Execution,0.9454428553581238
+1162,8,micro_recall/validation/Execution,0.9184852242469788
+1163,9,micro_recall/validation/Execution,0.9005134701728821
+1164,10,micro_recall/validation/Execution,0.9415917992591858
+1165,11,micro_recall/validation/Execution,0.9050064086914062
+1166,12,micro_recall/validation/Execution,0.8883183598518372
+1167,13,micro_recall/validation/Execution,0.9191271066665649
+1168,14,micro_recall/validation/Execution,0.8896020650863647
+1169,15,micro_recall/validation/Execution,0.9191271066665649
+1170,16,micro_recall/validation/Execution,0.9005134701728821
+1171,17,micro_recall/validation/Execution,0.8908857703208923
+1172,18,micro_recall/validation/Execution,0.8947368264198303
+1173,19,micro_recall/validation/Execution,0.883825421333313
+1174,20,micro_recall/validation/Execution,0.8896020650863647
+1175,21,micro_recall/validation/Execution,0.8786906003952026
+1176,22,micro_recall/validation/Execution,0.881899893283844
+1177,23,micro_recall/validation/Execution,0.8806161880493164
+1178,24,micro_recall/validation/Execution,0.8543003797531128
+1179,25,micro_recall/validation/Execution,0.9152759909629822
+1180,26,micro_recall/validation/Execution,0.8870346546173096
+1181,27,micro_recall/validation/Execution,0.8870346546173096
+1182,28,micro_recall/validation/Execution,0.8870346546173096
+1183,29,micro_recall/validation/Execution,0.8902438879013062
+1184,30,micro_recall/validation/Execution,0.8902438879013062
+1185,31,micro_recall/validation/Execution,0.8896020650863647
+1186,32,micro_recall/validation/Execution,0.8896020650863647
+1187,33,micro_recall/validation/Execution,0.8902438879013062
+1188,34,micro_recall/validation/Execution,0.8908857703208923
+1189,35,micro_recall/validation/Execution,0.8902438879013062
+1190,36,micro_recall/validation/Execution,0.8902438879013062
+1191,37,micro_recall/validation/Execution,0.8902438879013062
+1192,38,micro_recall/validation/Execution,0.8902438879013062
+1193,39,micro_recall/validation/Execution,0.8902438879013062
+1194,40,micro_recall/validation/Execution,0.8902438879013062
+1195,41,micro_recall/validation/Execution,0.8902438879013062
+1196,42,micro_recall/validation/Execution,0.8896020650863647
+1197,43,micro_recall/validation/Execution,0.8896020650863647
+1198,44,micro_recall/validation/Execution,0.8896020650863647
+1199,45,micro_recall/validation/Execution,0.8896020650863647
+1200,46,micro_recall/validation/Execution,0.8896020650863647
+1201,47,micro_recall/validation/Execution,0.8896020650863647
+1202,48,micro_recall/validation/Execution,0.8896020650863647
+1203,49,micro_recall/validation/Execution,0.8896020650863647
+1204,0,micro_recall/validation/Harmless,0.0
+1205,1,micro_recall/validation/Harmless,0.0
+1206,2,micro_recall/validation/Harmless,0.0021739129442721605
+1207,3,micro_recall/validation/Harmless,0.0021739129442721605
+1208,4,micro_recall/validation/Harmless,0.004347825888544321
+1209,5,micro_recall/validation/Harmless,0.006521739065647125
+1210,6,micro_recall/validation/Harmless,0.006521739065647125
+1211,7,micro_recall/validation/Harmless,0.03695652261376381
+1212,8,micro_recall/validation/Harmless,0.032608695328235626
+1213,9,micro_recall/validation/Harmless,0.06304347515106201
+1214,10,micro_recall/validation/Harmless,0.06304347515106201
+1215,11,micro_recall/validation/Harmless,0.06304347515106201
+1216,12,micro_recall/validation/Harmless,0.06304347515106201
+1217,13,micro_recall/validation/Harmless,0.06304347515106201
+1218,14,micro_recall/validation/Harmless,0.06304347515106201
+1219,15,micro_recall/validation/Harmless,0.06304347515106201
+1220,16,micro_recall/validation/Harmless,0.06304347515106201
+1221,17,micro_recall/validation/Harmless,0.06304347515106201
+1222,18,micro_recall/validation/Harmless,0.06521739065647125
+1223,19,micro_recall/validation/Harmless,0.08478260785341263
+1224,20,micro_recall/validation/Harmless,0.104347825050354
+1225,21,micro_recall/validation/Harmless,0.10000000149011612
+1226,22,micro_recall/validation/Harmless,0.10217390954494476
+1227,23,micro_recall/validation/Harmless,0.10217390954494476
+1228,24,micro_recall/validation/Harmless,0.104347825050354
+1229,25,micro_recall/validation/Harmless,0.10217390954494476
+1230,26,micro_recall/validation/Harmless,0.10217390954494476
+1231,27,micro_recall/validation/Harmless,0.10217390954494476
+1232,28,micro_recall/validation/Harmless,0.10217390954494476
+1233,29,micro_recall/validation/Harmless,0.10217390954494476
+1234,30,micro_recall/validation/Harmless,0.10217390954494476
+1235,31,micro_recall/validation/Harmless,0.10217390954494476
+1236,32,micro_recall/validation/Harmless,0.10217390954494476
+1237,33,micro_recall/validation/Harmless,0.10217390954494476
+1238,34,micro_recall/validation/Harmless,0.10217390954494476
+1239,35,micro_recall/validation/Harmless,0.10217390954494476
+1240,36,micro_recall/validation/Harmless,0.10217390954494476
+1241,37,micro_recall/validation/Harmless,0.10217390954494476
+1242,38,micro_recall/validation/Harmless,0.10217390954494476
+1243,39,micro_recall/validation/Harmless,0.10217390954494476
+1244,40,micro_recall/validation/Harmless,0.10217390954494476
+1245,41,micro_recall/validation/Harmless,0.10217390954494476
+1246,42,micro_recall/validation/Harmless,0.10217390954494476
+1247,43,micro_recall/validation/Harmless,0.10217390954494476
+1248,44,micro_recall/validation/Harmless,0.10217390954494476
+1249,45,micro_recall/validation/Harmless,0.10217390954494476
+1250,46,micro_recall/validation/Harmless,0.10217390954494476
+1251,47,micro_recall/validation/Harmless,0.10217390954494476
+1252,48,micro_recall/validation/Harmless,0.10217390954494476
+1253,49,micro_recall/validation/Harmless,0.10217390954494476
+1254,0,micro_recall/validation/Impact,0.0
+1255,1,micro_recall/validation/Impact,0.0
+1256,2,micro_recall/validation/Impact,0.0
+1257,3,micro_recall/validation/Impact,0.0
+1258,4,micro_recall/validation/Impact,0.0
+1259,5,micro_recall/validation/Impact,0.0
+1260,6,micro_recall/validation/Impact,0.0
+1261,7,micro_recall/validation/Impact,0.0
+1262,8,micro_recall/validation/Impact,0.0
+1263,9,micro_recall/validation/Impact,0.0
+1264,10,micro_recall/validation/Impact,0.0
+1265,11,micro_recall/validation/Impact,0.0
+1266,12,micro_recall/validation/Impact,0.0
+1267,13,micro_recall/validation/Impact,0.0
+1268,14,micro_recall/validation/Impact,0.06666667014360428
+1269,15,micro_recall/validation/Impact,0.1111111119389534
+1270,16,micro_recall/validation/Impact,0.1111111119389534
+1271,17,micro_recall/validation/Impact,0.08888889104127884
+1272,18,micro_recall/validation/Impact,0.17777778208255768
+1273,19,micro_recall/validation/Impact,0.04444444552063942
+1274,20,micro_recall/validation/Impact,0.20000000298023224
+1275,21,micro_recall/validation/Impact,0.17777778208255768
+1276,22,micro_recall/validation/Impact,0.15555556118488312
+1277,23,micro_recall/validation/Impact,0.13333334028720856
+1278,24,micro_recall/validation/Impact,0.15555556118488312
+1279,25,micro_recall/validation/Impact,0.17777778208255768
+1280,26,micro_recall/validation/Impact,0.15555556118488312
+1281,27,micro_recall/validation/Impact,0.15555556118488312
+1282,28,micro_recall/validation/Impact,0.15555556118488312
+1283,29,micro_recall/validation/Impact,0.15555556118488312
+1284,30,micro_recall/validation/Impact,0.1111111119389534
+1285,31,micro_recall/validation/Impact,0.1111111119389534
+1286,32,micro_recall/validation/Impact,0.1111111119389534
+1287,33,micro_recall/validation/Impact,0.1111111119389534
+1288,34,micro_recall/validation/Impact,0.1111111119389534
+1289,35,micro_recall/validation/Impact,0.1111111119389534
+1290,36,micro_recall/validation/Impact,0.1111111119389534
+1291,37,micro_recall/validation/Impact,0.1111111119389534
+1292,38,micro_recall/validation/Impact,0.1111111119389534
+1293,39,micro_recall/validation/Impact,0.1111111119389534
+1294,40,micro_recall/validation/Impact,0.1111111119389534
+1295,41,micro_recall/validation/Impact,0.1111111119389534
+1296,42,micro_recall/validation/Impact,0.1111111119389534
+1297,43,micro_recall/validation/Impact,0.1111111119389534
+1298,44,micro_recall/validation/Impact,0.1111111119389534
+1299,45,micro_recall/validation/Impact,0.1111111119389534
+1300,46,micro_recall/validation/Impact,0.1111111119389534
+1301,47,micro_recall/validation/Impact,0.1111111119389534
+1302,48,micro_recall/validation/Impact,0.1111111119389534
+1303,49,micro_recall/validation/Impact,0.1111111119389534
+1304,0,micro_recall/validation/Other,0.0
+1305,1,micro_recall/validation/Other,0.0
+1306,2,micro_recall/validation/Other,0.0
+1307,3,micro_recall/validation/Other,0.0
+1308,4,micro_recall/validation/Other,0.028169013559818268
+1309,5,micro_recall/validation/Other,0.0422535203397274
+1310,6,micro_recall/validation/Other,0.028169013559818268
+1311,7,micro_recall/validation/Other,0.0422535203397274
+1312,8,micro_recall/validation/Other,0.028169013559818268
+1313,9,micro_recall/validation/Other,0.0845070406794548
+1314,10,micro_recall/validation/Other,0.028169013559818268
+1315,11,micro_recall/validation/Other,0.23943662643432617
+1316,12,micro_recall/validation/Other,0.3239436745643616
+1317,13,micro_recall/validation/Other,0.2535211145877838
+1318,14,micro_recall/validation/Other,0.4225352108478546
+1319,15,micro_recall/validation/Other,0.8873239159584045
+1320,16,micro_recall/validation/Other,0.7605633735656738
+1321,17,micro_recall/validation/Other,0.9154929518699646
+1322,18,micro_recall/validation/Other,0.9436619877815247
+1323,19,micro_recall/validation/Other,0.9718309640884399
+1324,20,micro_recall/validation/Other,0.9718309640884399
+1325,21,micro_recall/validation/Other,0.9718309640884399
+1326,22,micro_recall/validation/Other,0.9718309640884399
+1327,23,micro_recall/validation/Other,0.9718309640884399
+1328,24,micro_recall/validation/Other,1.0
+1329,25,micro_recall/validation/Other,1.0
+1330,26,micro_recall/validation/Other,1.0
+1331,27,micro_recall/validation/Other,0.98591548204422
+1332,28,micro_recall/validation/Other,0.98591548204422
+1333,29,micro_recall/validation/Other,1.0
+1334,30,micro_recall/validation/Other,0.98591548204422
+1335,31,micro_recall/validation/Other,0.98591548204422
+1336,32,micro_recall/validation/Other,0.98591548204422
+1337,33,micro_recall/validation/Other,0.98591548204422
+1338,34,micro_recall/validation/Other,0.98591548204422
+1339,35,micro_recall/validation/Other,0.98591548204422
+1340,36,micro_recall/validation/Other,0.98591548204422
+1341,37,micro_recall/validation/Other,0.98591548204422
+1342,38,micro_recall/validation/Other,0.98591548204422
+1343,39,micro_recall/validation/Other,0.98591548204422
+1344,40,micro_recall/validation/Other,0.98591548204422
+1345,41,micro_recall/validation/Other,0.98591548204422
+1346,42,micro_recall/validation/Other,0.98591548204422
+1347,43,micro_recall/validation/Other,0.98591548204422
+1348,44,micro_recall/validation/Other,0.98591548204422
+1349,45,micro_recall/validation/Other,0.98591548204422
+1350,46,micro_recall/validation/Other,0.98591548204422
+1351,47,micro_recall/validation/Other,0.98591548204422
+1352,48,micro_recall/validation/Other,0.98591548204422
+1353,49,micro_recall/validation/Other,0.98591548204422
+1354,0,micro_recall/validation/Persistence,0.0
+1355,1,micro_recall/validation/Persistence,0.13258109986782074
+1356,2,micro_recall/validation/Persistence,0.44992947578430176
+1357,3,micro_recall/validation/Persistence,0.5825105905532837
+1358,4,micro_recall/validation/Persistence,0.5994358062744141
+1359,5,micro_recall/validation/Persistence,0.8335683941841125
+1360,6,micro_recall/validation/Persistence,0.9040902853012085
+1361,7,micro_recall/validation/Persistence,0.9703808426856995
+1362,8,micro_recall/validation/Persistence,0.9746121168136597
+1363,9,micro_recall/validation/Persistence,0.9774330258369446
+1364,10,micro_recall/validation/Persistence,0.9971791505813599
+1365,11,micro_recall/validation/Persistence,0.9971791505813599
+1366,12,micro_recall/validation/Persistence,0.9971791505813599
+1367,13,micro_recall/validation/Persistence,0.9873060584068298
+1368,14,micro_recall/validation/Persistence,0.9816642999649048
+1369,15,micro_recall/validation/Persistence,0.9971791505813599
+1370,16,micro_recall/validation/Persistence,0.9929478168487549
+1371,17,micro_recall/validation/Persistence,0.9971791505813599
+1372,18,micro_recall/validation/Persistence,0.9971791505813599
+1373,19,micro_recall/validation/Persistence,0.995768666267395
+1374,20,micro_recall/validation/Persistence,0.9929478168487549
+1375,21,micro_recall/validation/Persistence,0.995768666267395
+1376,22,micro_recall/validation/Persistence,0.994358241558075
+1377,23,micro_recall/validation/Persistence,0.994358241558075
+1378,24,micro_recall/validation/Persistence,0.995768666267395
+1379,25,micro_recall/validation/Persistence,0.994358241558075
+1380,26,micro_recall/validation/Persistence,0.994358241558075
+1381,27,micro_recall/validation/Persistence,0.994358241558075
+1382,28,micro_recall/validation/Persistence,0.994358241558075
+1383,29,micro_recall/validation/Persistence,0.994358241558075
+1384,30,micro_recall/validation/Persistence,0.995768666267395
+1385,31,micro_recall/validation/Persistence,0.995768666267395
+1386,32,micro_recall/validation/Persistence,0.995768666267395
+1387,33,micro_recall/validation/Persistence,0.995768666267395
+1388,34,micro_recall/validation/Persistence,0.995768666267395
+1389,35,micro_recall/validation/Persistence,0.995768666267395
+1390,36,micro_recall/validation/Persistence,0.995768666267395
+1391,37,micro_recall/validation/Persistence,0.995768666267395
+1392,38,micro_recall/validation/Persistence,0.995768666267395
+1393,39,micro_recall/validation/Persistence,0.995768666267395
+1394,40,micro_recall/validation/Persistence,0.995768666267395
+1395,41,micro_recall/validation/Persistence,0.995768666267395
+1396,42,micro_recall/validation/Persistence,0.995768666267395
+1397,43,micro_recall/validation/Persistence,0.995768666267395
+1398,44,micro_recall/validation/Persistence,0.995768666267395
+1399,45,micro_recall/validation/Persistence,0.995768666267395
+1400,46,micro_recall/validation/Persistence,0.995768666267395
+1401,47,micro_recall/validation/Persistence,0.995768666267395
+1402,48,micro_recall/validation/Persistence,0.995768666267395
+1403,49,micro_recall/validation/Persistence,0.995768666267395

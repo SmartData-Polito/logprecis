@@ -1,5 +1,6 @@
 import os
 from transformers import AutoTokenizer
+from transformers import PreTrainedTokenizerFast
 from core.functions.tokenizer_functions import (
     align_labels_with_statements,
     align_labels_with_tokens,
@@ -28,9 +29,12 @@ class LogPrecisTokenizer:
         """
         if not os.path.exists(self.tokenizer_name):
             # Default tokenizer, will be downloaded the first time and then cached in default cache folder
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                self.tokenizer_name, add_prefix_space=True
-            )
+            self.tokenizer = PreTrainedTokenizerFast(tokenizer_file="bpe_hf_tokenizer.json",unk_token="<unk>",
+    pad_token="<pad>",
+    mask_token="<mask>")
+            # self.tokenizer = AutoTokenizer.from_pretrained(
+            #     self.tokenizer_name, add_prefix_space=True
+            # )
             if self.classified_entity == "statement":
                 # Adding special token...
                 self.tokenizer.add_tokens([self.special_token], special_tokens=True)

@@ -562,7 +562,7 @@ class LogPrecisModel:
                     if self.observed_val_metric != "loss"
                     else -scores[self.observed_val_metric]
                 )
-                breakpoint()
+                
                 if current_metric > best_metric:
                     best_epoch = 1
                     self.best_model = deepcopy(self.model).to("cpu")

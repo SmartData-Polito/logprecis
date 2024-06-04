@@ -145,6 +145,13 @@ def get_training_options(args=None):
         help="How many epochs to wait before reducing on plateau. Default to 4.",
     )
     parser.add_argument(
+        "--adaptation",
+        type=str,
+        default="concatenated",
+        choices=["concatenated", "single_session"],
+        help="Type of adaptation used in the tokenizer. Default to concatenated",
+    )
+    parser.add_argument(
         "--observed_val_metric",
         type=str,
         default="loss",
@@ -265,6 +272,13 @@ def get_inference_options(args=None):
         required=True,
         help="Finetuned Path. \
                         Must be the path to the finetuned model.",
+    )
+    parser.add_argument(
+        "--adaptation",
+        type=str,
+        default="concatenated",
+        choices=["concatenated", "single_session"],
+        help="Type of adaptation used in the tokenizer. Default to concatenated",
     )
     parser.add_argument(
         "--tokenizer_name",

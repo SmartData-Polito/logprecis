@@ -7,6 +7,7 @@ from core.functions.utils import (
 from core.functions.preprocessing_functions import (
     groupy_labels_and_predictions,
     recreate_original_sessions,
+    divide_statements,
 )
 from core.functions.utils import (
     obtain_unpadded_tensors,
@@ -382,7 +383,23 @@ class LogPrecisModel:
         if self.classified_entity == "word":
             # Also export reconstructed sessions
             df_reconstructed = self.reconstruct_dataset(
-                prediction_df=df_parquet, original_df=dataset_obj.final_dataset
+                prediction_df=df_parquet,
+                original_df=dataset_obj.final_dataset,
+                statement=False,
+            )
+            logger.experiment_logger.info(
+                f"\tReconstructed {df_reconstructed.shape[0]:,}"
+            )
+            logger.log_parquet(
+                df_reconstructed,
+                f"{dataset_obj.dataset_name}_reconstructed_predictions_x_sessions.parquet",
+            )
+        elif self.classified_entity == "statement":
+            # Also export reconstructed sessions
+            df_reconstructed = self.reconstruct_dataset(
+                prediction_df=df_parquet,
+                original_df=dataset_obj.final_dataset,
+                statement=True,
             )
             logger.experiment_logger.info(
                 f"\tReconstructed {df_reconstructed.shape[0]:,}"
@@ -434,10 +451,26 @@ class LogPrecisModel:
         if self.classified_entity == "word":
             # Also export reconstructed sessions
             df_reconstructed = self.reconstruct_dataset(
-                prediction_df=df_parquet, original_df=dataset_obj.final_dataset
+                prediction_df=df_parquet,
+                original_df=dataset_obj.final_dataset,
+                statement=False,
             )
             logger.experiment_logger.info(
                 f"\tReconstructed {df_reconstructed.shape[0]:,} sessions"
+            )
+            logger.log_parquet(
+                df_reconstructed,
+                f"{dataset_obj.dataset_name}_reconstructed_predictions_x_sessions.parquet",
+            )
+        elif self.classified_entity == "statement":
+            # Also export reconstructed sessions
+            df_reconstructed = self.reconstruct_dataset(
+                prediction_df=df_parquet,
+                original_df=dataset_obj.final_dataset,
+                statement=True,
+            )
+            logger.experiment_logger.info(
+                f"\tReconstructed {df_reconstructed.shape[0]:,}"
             )
             logger.log_parquet(
                 df_reconstructed,
@@ -454,15 +487,23 @@ class LogPrecisModel:
         markdown = df_parquet.to_markdown()
         logger.log_text(txt=markdown, tag=f"nlp_scores/test", global_step=1)
 
-    def reconstruct_dataset(self, prediction_df, original_df):
+    def reconstruct_dataset(self, prediction_df, original_df, statement=False):
         # First, convert labels into real labels (non IDs)
         prediction_df["sequence_predictions"] = prediction_df["Predictions"].apply(
             lambda prediction_id: self.id2labels[prediction_id]
         )
+        if statement:
+            # recreate the STAT token in the session (correct way to delete the word ids)
+            original_df.loc[:, "session_stat"] = original_df.sessions.apply(
+                lambda el: divide_statements(el, add_special_token=True)
+            )
+            original_df["session_stat"] = original_df["session_stat"].apply(
+                lambda char_list: " ".join(char_list)
+            )
         # Recreate the original sessions from the chunk now
         grouped_df = (
             original_df.groupby("session_id")
-            .apply(recreate_original_sessions)
+            .apply(lambda row: recreate_original_sessions(row, statement=statement))
             .reset_index()
         )
         # Then, concatenate tokens belonging to the same session according to the chunks' order id
@@ -477,14 +518,24 @@ class LogPrecisModel:
         )
         # Eventually, join predictions and original sessions
         reconstructed_sessions = sessions_predictions.merge(grouped_df, on="session_id")
-        return self.remove_truncated_predictions(reconstructed_sessions)
+        if statement:
+            reconstructed_sessions["recreated_session"] = reconstructed_sessions[
+                "recreated_session"
+            ].str.replace(r"\[STAT\] ", "", regex=True)
+        return self.remove_truncated_predictions(reconstructed_sessions, statement)
 
-    def remove_truncated_predictions(self, df_predictions):
+    def remove_truncated_predictions(self, df_predictions, statement=False):
         df_tmp = df_predictions.copy()
-        df_tmp["sequence_words"] = df_tmp.recreated_session.apply(
-            lambda session: session.split()
-        )
-        n_entities = df_tmp.sequence_words.apply(lambda session: len(session))
+        if statement:
+            df_tmp["sequence_statements"] = df_tmp.recreated_session.apply(
+                lambda session: divide_statements(session, True)
+            )
+            n_entities = df_tmp.sequence_statements.apply(lambda session: len(session))
+        else:
+            df_tmp["sequence_words"] = df_tmp.recreated_session.apply(
+                lambda session: session.split()
+            )
+            n_entities = df_tmp.sequence_words.apply(lambda session: len(session))
         n_predictions = df_tmp.sequence_predictions.apply(lambda el: len(el))
         # returns the indexes in which the number mismatch
         indexes_to_remove = n_entities.compare(n_predictions).index

@@ -30,17 +30,19 @@ def divide_statements(session, add_special_token, special_token="[STAT]"):
     return statements
 
 
-def statement2word(row):
+def statement2word(row, add_special_token=False):
     """Convert statements to word indexes.
     This function converts statements into word indexes based on the provided context indexes.
     Args:
         row (DataFrame row): The row containing session information and context indexes.
+        add_special_token (bool, optional): whether to add the special tokens. Default to False.
     Returns:
         list of int: A list of word indexes.
     """
     context_indexes = row.indexes_statements_context
     sessions = row.sessions
-    statements = divide_statements(sessions, add_special_token=False)
+    # Notice: if we are doing statement classification, it's important to consider some [STA] tokens as context as well!
+    statements = divide_statements(sessions, add_special_token=add_special_token)
     indexes_words_context = []
     current_index = 0
     for it, statement in enumerate(statements):
@@ -52,7 +54,7 @@ def statement2word(row):
     return indexes_words_context
 
 
-def recreate_original_sessions(rows):
+def recreate_original_sessions(rows, statement=False):
     """Recreate the original sessions from sub-sessions.
     This function reconstructs the original sessions from sub-sessions by removing words
     based on the provided word context indexes.
@@ -62,7 +64,10 @@ def recreate_original_sessions(rows):
         Series: A Series containing the recreated original session.
     """
     rows.sort_values(by="order_id", inplace=True)
-    sub_sessions = rows["sessions"]
+    if statement:
+        sub_sessions = rows["session_stat"]
+    else:
+        sub_sessions = rows["sessions"]
     indexes_words_context = rows["indexes_words_context"].values
     original_session = []
     for sub_session, word_context in zip(sub_sessions, indexes_words_context):

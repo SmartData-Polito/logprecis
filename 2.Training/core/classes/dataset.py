@@ -128,18 +128,23 @@ class DataHandler:
         ]
         return len(session_ids_to_remove)
 
-    def chunking_sanity_check(self, logger):
+    def chunking_sanity_check(self, logger, add_special_token):
         """Perform a sanity check on chunking operations.
         This method compares the truncated sessions in the dataset with the sessions recreated from chunks.
         It identifies faulty splits and removes them from the dataset.
         Args:
             logger (Logger): A logger object for debugging and logging purposes.
         """
+
+        dataset_2_check = self.final_dataset.copy()
+        dataset_2_check["statements"] = dataset_2_check.sessions.apply(lambda el: divide_statements(el, add_special_token=add_special_token))
+        dataset_2_check["sessions"] = dataset_2_check["statements"].apply(lambda el: " ".join(el))
         grouped_df = (
-            self.final_dataset.groupby("session_id")
+            dataset_2_check.groupby("session_id")
             .apply(recreate_original_sessions)
             .reset_index()
         )
+        grouped_df["recreated_session"] = grouped_df["recreated_session"].apply(lambda el: el.replace("[STAT] ", ""))
         sanity_check = self.dataset[["session_id", "truncated_session"]].merge(
             grouped_df, on="session_id"
         )

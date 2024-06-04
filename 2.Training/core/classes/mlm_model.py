@@ -31,7 +31,6 @@ class MaskedLogModel:
         self.finetuned_path = opts["finetuned_path"]
         # CUDA SETTINGS
         self.device = torch.device("cuda:0" if opts["use_cuda"] else "cpu")
-        self.load_model()
         # Training paraeters
         self.lr = opts["lr"]
         self.batch_size = opts["batch_size"]

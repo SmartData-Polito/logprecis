@@ -8,7 +8,7 @@ LOG_LEVEL="info"
 
 #Model info
 MODEL_NAME="SmartDataPolito/logprecis"
-FINETUNED_PATH="" #"Path_to_your_trained_model"
+FINETUNED_PATH="./results/entity_classification/statement/microsoft_codebert-base/statement_codebert/seed_5/best_model" #"Path_to_your_trained_model"
 TOKENIZER_NAME="SmartDataPolito/logprecis"
 MAX_CHUNK_LENGTH=512
 

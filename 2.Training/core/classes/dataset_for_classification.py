@@ -86,9 +86,16 @@ class HoneyDataForClassification(DataHandler):
             logger.experiment_logger.debug(
                 "\t\tSanity check: remove sessions in which the split failed..."
             )
-            self.chunking_sanity_check(logger.experiment_logger)
+            if self.classified_entity == "statement":
+                self.chunking_sanity_check(
+                    logger.experiment_logger, add_special_token=True
+                )
+            else:
+                self.chunking_sanity_check(
+                    logger.experiment_logger, add_special_token=False
+                )
             logger.experiment_logger.debug(
-                f"\tPreprocessing endend: created {self.final_dataset.shape[0]} chunks from {self.dataset.shape[0]} original sessions"
+                f"\tPreprocescomplete_preprocessingsing endend: created {self.final_dataset.shape[0]} chunks from {self.dataset.shape[0]} original sessions"
             )
             logger.experiment_logger.debug("\t\tSaving cached file now...")
             logger.save_cache(
@@ -123,9 +130,14 @@ class HoneyDataForClassification(DataHandler):
         )
         for column in columns_to_strip:
             self.final_dataset = strip_strings(self.final_dataset, column)
-        self.final_dataset["indexes_words_context"] = self.final_dataset.apply(
-            statement2word, axis=1
-        )
+        if self.classified_entity == "statement":
+            self.final_dataset["indexes_words_context"] = self.final_dataset.apply(
+                lambda row: statement2word(row, add_special_token=True), axis=1
+            )
+        else:
+            self.final_dataset["indexes_words_context"] = self.final_dataset.apply(
+                lambda row: statement2word(row, add_special_token=False), axis=1
+            )
 
     def selection_sanity_check(self, count_special_tokens=False):
         """Perform a sanity check on the selection process.

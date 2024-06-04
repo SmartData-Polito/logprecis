@@ -1,3 +1,2 @@
 # if we keep default folder for `OUTPUT_PATH`, do not push to Git
 results 
-results_old

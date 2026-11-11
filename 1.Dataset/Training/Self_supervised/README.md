@@ -24,6 +24,15 @@ If you use this code or find it helpful, please consider citing the following da
                and Evaluation
 - URL: (https://github.com/TellinaTool/nl2bash/tree/master)
 
+## License
+
+Our curation and packaging of this corpus are released under [CC BY 4.0](../../../LICENSE-DATA), but the two sources keep their own licenses:
+
+- **NL2Bash** (benign) — the `data/bash` corpus is MIT-licensed; retain the MIT notice when redistributing.
+- **HaaS** (malign) — governed by the [HaaS Terms of Use](https://haas.nic.cz/), *not* an open-data license; CC BY 4.0 does not apply to the raw HaaS content.
+
+See [`NOTICE`](../../../NOTICE) for details.
+
 ## HOWTO
 
 To group the files from the `.\Training_Chunks` and `.\Validation_Chunks` folders, run:

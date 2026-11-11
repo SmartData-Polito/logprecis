@@ -35,6 +35,10 @@ python split_partitions.py --help
 
 fort further details.
 
+## License
+
+Our **labels and curation** of these 360 sessions are released under [CC BY 4.0](../../../LICENSE-DATA). The underlying session text comes from [HaaS](https://haas.nic.cz/) and remains under the **HaaS Terms of Use** — CC BY 4.0 does *not* apply to the raw HaaS content. Please attribute HaaS and follow its terms when reusing the sessions.
+
 ## Contributing
 
 Sessions were chosen in order to be representative of the Mitre Classes. Still, we welcome contributions from the community to enhance LogPrécis further. If you have any ideas, bug reports, or feature requests, please contact our team at [matteo.boffa@polito.it](mailto:matteo.boffa@polito.it) and [idilio.drago@unito.it](mailto:idilio.drago@unito.it).

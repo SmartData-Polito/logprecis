@@ -1,0 +1,45 @@
+LogPrécis
+Copyright 2023-2026 The LogPrécis Authors (Politecnico di Torino, Università di Torino)
+
+This product includes software and data developed by the LogPrécis authors,
+licensed as follows:
+
+  - Source code and released models: Apache License 2.0 (see LICENSE)
+  - Original datasets and annotations released by this project: CC BY 4.0 (see LICENSE-DATA)
+
+================================================================================
+Third-party components and their licenses
+================================================================================
+
+The models and datasets in this repository are DERIVED from, or INCORPORATE,
+the following third-party works. Each retains its own upstream license, and the
+LogPrécis license does NOT relicense them. Users must comply with the terms
+below in addition to the LogPrécis license.
+
+1. CodeBERT (microsoft/codebert-base)
+   - Used as the base model for SecureShellBert and LogPrecis.
+   - License: MIT (https://github.com/microsoft/CodeBERT)
+   - MIT permits redistribution of derivatives under Apache 2.0, provided the
+     MIT copyright and permission notice are retained.
+
+2. NL2Bash (data/bash, file all.cm)
+   - Used as the benign-session corpus in self-supervised training.
+   - Lin, Wang, Zettlemoyer, Ernst (2018), LREC.
+   - Dataset license: MIT (the nl2bash repository code is GPL-3.0, but the
+     `data/bash` corpus is separately licensed under MIT).
+   - https://github.com/TellinaTool/nl2bash
+
+3. CyberLab honeynet dataset
+   - Used as inference data.
+   - Sedlar U., Kren M., Štefanič Južnič L., Volk M. (2020), Zenodo.
+   - License: CC BY 4.0
+   - DOI: 10.5281/zenodo.3687527 (https://doi.org/10.5281/zenodo.3687527)
+
+4. HaaS – Honeypot as a Service (CZ.NIC)
+   - Used as the malign-session source for the self-supervised corpus and as the
+     raw sessions underlying the 360-session labeled supervised corpus.
+   - License: governed by the HaaS Terms of Use (https://haas.nic.cz/). HaaS does
+     NOT publish an open-data license such as CC BY. The CC BY 4.0 license of
+     this project covers ONLY our own annotations, selection and curation of the
+     360 labeled sessions — NOT the underlying HaaS session content. To obtain
+     and reuse the underlying HaaS data, refer to the HaaS Terms of Use.

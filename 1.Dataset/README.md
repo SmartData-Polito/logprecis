@@ -12,3 +12,7 @@ Here we report the datasets for:
 ## Inference
 
 Here we report the dataset to use at inference time once that the LM has been trained for the supervised task.
+
+## License
+
+Our annotations, curation and data splits are released under [CC BY 4.0](../LICENSE-DATA). This does **not** relicense the third-party sources these datasets are built on — each keeps its upstream license (HaaS: Terms of Use; NL2Bash `data/bash`: MIT; CyberLab: CC BY 4.0). See [`../NOTICE`](../NOTICE) and the per-folder notes below.

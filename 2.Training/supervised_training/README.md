@@ -1,6 +1,6 @@
 # LogPrécis 🤖
 
-This folder contains the code to perform training and inference leveraging [LogPrécis](https://arxiv.org/abs/2307.08309), a tool that solves an entity classification problem over attacking logs.
+This folder contains the code to perform training and inference leveraging [LogPrécis](https://doi.org/10.1016/j.cose.2024.103805), a tool that solves an entity classification problem over attacking logs.
 
 ## Input data 🗂️
 

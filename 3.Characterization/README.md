@@ -4,7 +4,7 @@ This folder contains the characterization files we used to investigate the infer
 
 ## Frequent words vs tactics
 
-This notebook reproduces `Figure 8` of the [paper](https://arxiv.org/abs/2307.08309). It is the context a bash word "lives" in that determine its prediction (i.e., context matters). This justify the use of attention-based models such as (L)LMs.
+This notebook reproduces `Figure 8` of the [paper](https://doi.org/10.1016/j.cose.2024.103805). It is the context a bash word "lives" in that determine its prediction (i.e., context matters). This justify the use of attention-based models such as (L)LMs.
 
 ## Sessions vs Fingerprints
 
